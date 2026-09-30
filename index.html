@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DJ Thorax — DJ voor fuiven, events & privéfeesten</title>
+<meta name="description" content="DJ Thorax: jonge all-round DJ uit West-Vlaanderen. Van tijdloze klassiekers tot rave-energie. Boek voor fuiven, events, bedrijfsfeesten en trouwfeesten — licht & geluid op maat mogelijk.">
+<meta name="theme-color" content="#050409">
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DJ Thorax">
+<meta property="og:description" content="Good music isn’t just heard — it’s felt. Boek DJ Thorax voor je feest.">
+<meta property="og:image" content="https://www.djthorax.com/img/logo-og.jpg">
+<meta property="og:url" content="https://www.djthorax.com/">
+<link rel="canonical" href="https://www.djthorax.com/">
+<link rel="preload" as="image" href="img/hero-video-poster.webp" media="(max-width:899px)" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MusicGroup","name":"DJ Thorax","genre":["Dance","House","Party classics"],"url":"https://www.djthorax.com/","image":"https://www.djthorax.com/img/logo-og.jpg","email":"thortack4@gmail.com","telephone":"+32467005708","member":{"@type":"Person","name":"Thor Tack"},"sameAs":["https://www.instagram.com/dj_thorax/","https://www.facebook.com/thor.tack/","https://soundcloud.com/thor-tack-123430728"]}
+</script>
+<style>
+:root{
+  --bg:#050409; --bg2:#0c0a14; --card:#12101c; --line:rgba(255,255,255,.09);
+  --text:#f3f1fa; --muted:#a19bb5; --dim:#6f6985;
+  --volt:#8b6cff; --volt2:#b7a6ff; --glow:rgba(139,108,255,.45);
+  --radius:18px; --wrap:1180px;
+  --head:"Chakra Petch",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font:16px/1.6 var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+section{padding:110px 0;position:relative}
+.eyebrow{font:700 12px/1 var(--head);letter-spacing:.22em;text-transform:uppercase;color:var(--volt2);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--volt);box-shadow:0 0 12px var(--volt)}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(34px,5.4vw,60px);text-transform:uppercase;margin:16px 0 18px}
+h3{font-size:22px}
+.lead{color:var(--muted);font-size:clamp(16px,1.6vw,18px);max-width:620px}
+.hl{color:var(--volt2);text-shadow:0 0 24px var(--glow)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font:700 15px/1 var(--head);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-volt{background:var(--volt);border-color:var(--volt);color:#fff;box-shadow:0 8px 30px -6px var(--glow)}
+.btn-volt:hover{box-shadow:0 12px 44px -4px var(--glow)}
+.btn-ghost{background:rgba(255,255,255,.04);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.09)}
+.btn svg{width:18px;height:18px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(5,4,9,.78);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand img{height:30px;width:auto}
+.menu{display:flex;gap:4px;align-items:center}
+.menu a{padding:10px 14px;border-radius:999px;font:600 14px/1 var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s,background .2s}
+.menu a:hover,.menu a.active{color:#fff;background:rgba(255,255,255,.06)}
+.menu .btn{height:42px;padding:0 20px;margin-left:8px;font-size:13px;color:#fff}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);cursor:pointer;place-items:center}
+.burger span{display:block;width:18px;height:2px;background:#fff;position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:#fff;transition:.3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.nav.open .burger span{background:transparent}
+.nav.open .burger span::before{top:0;transform:rotate(45deg)}
+.nav.open .burger span::after{top:0;transform:rotate(-45deg)}
+@media (max-width:900px){
+  .burger{display:grid}
+  .menu{position:fixed;inset:72px 0 auto;flex-direction:column;align-items:stretch;padding:14px 16px 24px;background:rgba(5,4,9,.97);border-bottom:1px solid var(--line);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}
+  .nav.open .menu{transform:none;opacity:1;pointer-events:auto}
+  .nav.open{background:rgba(5,4,9,.97)}
+  .menu a{padding:16px 12px;font-size:16px}
+  .menu .btn{margin:10px 0 0;height:52px}
+}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:flex-end;padding:140px 0 70px;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(5,4,9,.55) 0%,rgba(5,4,9,.15) 35%,rgba(5,4,9,.75) 70%,var(--bg) 100%),
+  radial-gradient(80% 60% at 80% 20%,rgba(139,108,255,.25),transparent 60%)}
+.flash{position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 50% at 70% 25%,rgba(190,175,255,.55),transparent 70%);opacity:0;pointer-events:none;mix-blend-mode:screen}
+.flash.on{animation:flash .9s ease-out}
+@keyframes flash{0%{opacity:0}6%{opacity:1}12%{opacity:.15}20%{opacity:.8}100%{opacity:0}}
+.hero-copy{display:grid;gap:26px;min-width:0}
+.hero-mark{width:min(640px,100%);filter:drop-shadow(0 0 28px rgba(183,166,255,.55))}
+.hero-media video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+.vid-sound{position:absolute;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px 0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(5,4,9,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font:600 13px/1 var(--head);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .2s,border-color .2s}
+.vid-sound:hover{background:rgba(139,108,255,.35);border-color:var(--volt)}
+.vid-sound svg{width:18px;height:18px}
+/* phone/tablet: the portrait video fills the hero behind the text */
+@media (max-width:899px){
+  .hero-bg{display:none}
+  .hero-media{position:absolute;inset:0;z-index:-2}
+  .hero-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:
+    linear-gradient(180deg,rgba(5,4,9,.45) 0%,rgba(5,4,9,.05) 28%,rgba(5,4,9,.3) 52%,rgba(5,4,9,.78) 80%,var(--bg) 100%)}
+  .vid-sound{top:88px;right:16px;z-index:1}
+}
+/* desktop: text left, the video as a portrait card on the right */
+@media (min-width:900px){
+  .hero{align-items:center;padding:110px 0 70px}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:clamp(40px,6vw,90px)}
+  .hero-bg img{filter:brightness(.5) saturate(1.1)}
+  .hero-media{position:relative;height:min(76vh,740px);aspect-ratio:9/16;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 40px 90px -30px #000,0 0 90px -20px var(--glow)}
+  .vid-sound{left:14px;bottom:14px}
+}
+.vmodal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.94);display:none;place-items:center;padding:20px}
+.vmodal.open{display:grid}
+.vmodal video{max-height:90vh;max-height:90svh;max-width:100%;aspect-ratio:9/16;border-radius:14px;background:#000}
+.vmodal .lb-close{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;font-size:22px;cursor:pointer}
+.hero h1{font-size:clamp(22px,3.2vw,34px);font-weight:500;font-style:italic;max-width:680px;color:#e9e5fb}
+.hero h1 b{font-weight:700;color:#fff}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:22px 0}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:scroll 60s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font:700 22px/1 var(--head);text-transform:uppercase;letter-spacing:.04em;color:var(--dim);display:flex;align-items:center;gap:44px;white-space:nowrap}
+.marquee-track span::after{content:"";width:12px;height:18px;background:var(--volt);clip-path:polygon(60% 0,0 58%,45% 58%,30% 100%,100% 38%,55% 38%);filter:drop-shadow(0 0 6px var(--volt))}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.about-photos{position:relative;aspect-ratio:4/5}
+.about-photos img{position:absolute;border-radius:var(--radius);object-fit:cover;box-shadow:0 30px 60px -20px #000}
+.about-photos img:first-child{inset:0 22% 12% 0;width:78%;height:88%}
+.about-photos img:last-child{right:0;bottom:0;width:48%;height:52%;border:6px solid var(--bg)}
+.about-photos::before{content:"";position:absolute;inset:-30px;background:radial-gradient(closest-side,rgba(139,108,255,.3),transparent);z-index:-1}
+.pillars{display:grid;gap:14px;margin-top:30px}
+.pillar{display:flex;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.pillar i{flex:none;width:38px;height:38px;border-radius:10px;background:rgba(139,108,255,.14);display:grid;place-items:center;color:var(--volt2);font-style:normal}
+.pillar i svg{width:20px;height:20px}
+.pillar b{display:block;font-family:var(--head);font-size:17px;margin-bottom:2px}
+.pillar p{color:var(--muted);font-size:14.5px}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}.about-photos{max-width:520px}}
+
+/* references */
+.ref-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:34px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;transition:.2s}
+.chip:hover{color:#fff;border-color:rgba(255,255,255,.25)}
+.chip.on{background:#fff;color:#000;border-color:#fff}
+.chip small{opacity:.6;margin-left:4px}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ref{position:relative;padding:20px 22px;border-radius:14px;background:var(--card);border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px;transition:border-color .2s,transform .2s,opacity .3s}
+.ref:hover{border-color:rgba(139,108,255,.5);transform:translateY(-2px)}
+.ref b{display:block;font-family:var(--head);font-size:17px;line-height:1.25}
+.ref span{font-size:13.5px;color:var(--muted)}
+.ref em{flex:none;font:700 14px/1 var(--head);font-style:normal;color:var(--volt2);background:rgba(139,108,255,.14);border-radius:999px;padding:8px 11px}
+.ref.hide{display:none}
+.private{margin-top:22px;padding:22px 24px;border-radius:14px;border:1px dashed rgba(139,108,255,.4);color:var(--muted);display:flex;gap:14px;align-items:center}
+.private b{color:#fff}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:10px;margin-top:60px}
+.gallery button{border:0;padding:0;background:#111;border-radius:12px;overflow:hidden;cursor:zoom-in;position:relative}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .3s;filter:saturate(.9)}
+.gallery button:hover img{transform:scale(1.05);filter:saturate(1.1)}
+.g1{grid-column:span 4;grid-row:span 3}.g2{grid-column:span 5;grid-row:span 2}.g3{grid-column:span 3;grid-row:span 2}
+.g4{grid-column:span 3;grid-row:span 2}.g5{grid-column:span 5;grid-row:span 2}.g6{grid-column:span 4;grid-row:span 1}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}.gallery button{grid-column:span 1!important;grid-row:span 1!important}.gallery button:first-child{grid-column:span 2!important;grid-row:span 2!important}}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:none;place-items:center;padding:20px}
+.lightbox.open{display:grid}
+.lightbox img{max-height:88vh;max-width:min(1100px,100%);border-radius:10px;object-fit:contain}
+.lightbox button{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;font-size:22px;cursor:pointer}
+.lb-close{top:18px;right:18px}.lb-prev{left:18px;top:50%;transform:translateY(-50%)}.lb-next{right:18px;top:50%;transform:translateY(-50%)}
+
+/* mixes */
+.mixes{background:linear-gradient(180deg,var(--bg),var(--bg2) 30%,var(--bg2) 70%,var(--bg))}
+.mix-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;margin-top:40px}
+.panel{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:28px;overflow:hidden}
+.sc{padding:0}
+.sc-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 24px;border-bottom:1px solid var(--line)}
+.sc-top b{font-family:var(--head);font-size:18px}
+.sc-top a{font-size:14px;color:#ff7a33;font-weight:600;display:flex;align-items:center;gap:6px}
+.sc iframe{display:block;width:100%;height:370px;border:0;background:#fff}
+.steps{list-style:none;counter-reset:s;display:grid;gap:4px;margin:22px 0 26px}
+.steps li{counter-increment:s;display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.steps li:last-child{border:0}
+.steps li::before{content:counter(s,decimal-leading-zero);font:700 15px/1 var(--head);color:var(--volt2);width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(139,108,255,.12)}
+.panel h3{font-size:26px;text-transform:uppercase}
+.panel p{color:var(--muted);margin-top:10px}
+@media (max-width:900px){.mix-grid{grid-template-columns:1fr}}
+
+/* light & sound */
+.ls-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+.ls-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 170px;gap:10px}
+.ls-photos img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.ls-photos img:nth-child(1){grid-row:span 2}
+.ls-photos img:nth-child(4){grid-column:span 2}
+.partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.partner{padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--card);font:700 15px/1 var(--head);letter-spacing:.04em}
+.partner.main{border-color:rgba(139,108,255,.6);box-shadow:0 0 0 1px rgba(139,108,255,.25),0 10px 30px -10px var(--glow)}
+.partner small{display:block;font:500 11px/1 var(--body);color:var(--volt2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.checks{list-style:none;display:grid;gap:10px;margin-top:26px}
+.checks li{display:flex;gap:12px;color:var(--muted)}
+.checks li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--volt) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.checks b{color:#fff;font-weight:600}
+@media (max-width:900px){.ls-grid{grid-template-columns:1fr;gap:40px}.ls-photos{grid-template-rows:170px 170px 150px}}
+
+/* booking */
+.book{background:radial-gradient(70% 50% at 50% 0%,rgba(139,108,255,.16),transparent 70%)}
+.book-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;margin-top:44px;align-items:start}
+form.panel{padding:32px}
+.fs{border:0;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:30px}
+.fs legend{grid-column:1/-1;font:700 13px/1 var(--head);letter-spacing:.18em;text-transform:uppercase;color:var(--volt2);margin-bottom:18px;display:flex;align-items:center;gap:10px;width:100%}
+.fs legend::after{content:"";flex:1;height:1px;background:var(--line)}
+.field{display:grid;gap:7px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label,.q{font-size:14px;font-weight:600;color:#ddd8ee}
+.field label i,.q i{color:var(--volt2);font-style:normal}
+.field input,.field textarea{width:100%;background:#0a0912;border:1px solid var(--line);border-radius:12px;padding:14px 15px;font-size:16px;outline:none;transition:border-color .2s,box-shadow .2s;color-scheme:dark}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--volt);box-shadow:0 0 0 4px rgba(139,108,255,.18)}
+.field input::placeholder,.field textarea::placeholder{color:var(--dim)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opts span{display:inline-flex;align-items:center;min-height:42px;padding:9px 16px;border-radius:12px;border:1px solid var(--line);background:#0a0912;font-size:14.5px;color:var(--muted);cursor:pointer;transition:.15s;line-height:1.3}
+.opts input:checked+span{background:rgba(139,108,255,.18);border-color:var(--volt);color:#fff}
+.opts input:focus-visible+span{box-shadow:0 0 0 4px rgba(139,108,255,.3)}
+.spot-input{position:relative}
+.spot-input svg{position:absolute;left:15px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:#1ed760;pointer-events:none}
+.field .spot-input input{padding-left:46px}
+.hint{font-size:13px;color:var(--dim)}
+.hint.ok{color:#5ee29a}.hint.bad{color:#ff8a9a}
+.spot-embed:empty{display:none}
+.spot-embed iframe{display:block;width:100%;height:152px;border:0;border-radius:12px;margin-top:4px}
+.other{display:none;margin-top:8px}
+.other.show{display:block}
+.form-foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:24px}
+.form-foot p{font-size:13.5px;color:var(--dim);max-width:340px}
+.form-foot p a{color:var(--muted);text-decoration:underline}
+.err{color:#ff8a9a;font-size:14px;margin-top:14px;display:none}
+.err.show{display:block}
+.done{display:none;text-align:center;padding:60px 20px}
+.done.show{display:block}
+.done .bolt{width:64px;height:64px;margin:0 auto 20px;color:var(--volt2);filter:drop-shadow(0 0 20px var(--volt))}
+.done h3{font-size:30px;text-transform:uppercase}
+.done p{color:var(--muted);margin:10px auto 0;max-width:420px}
+@media (max-width:640px){.fs{grid-template-columns:1fr}form.panel{padding:22px}}
+
+.contact{display:grid;gap:12px;position:sticky;top:92px}
+.c-item{display:flex;gap:16px;align-items:center;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:border-color .2s,transform .2s}
+a.c-item:hover{border-color:rgba(139,108,255,.55);transform:translateX(4px)}
+.c-item i{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(139,108,255,.14);color:var(--volt2)}
+.c-item i svg{width:21px;height:21px}
+.c-item small{display:block;font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em}
+.c-item b{font-weight:600;word-break:break-all}
+.badges{display:grid;gap:8px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.badges div{display:flex;justify-content:space-between;gap:10px;font-size:14.5px;color:var(--muted)}
+.badges div b{color:#fff;font-weight:600;text-align:right}
+.ok{color:#5ee29a}
+@media (max-width:900px){.book-grid{grid-template-columns:1fr}.contact{position:static}}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.faq-grid img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;margin-top:30px;width:100%}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font:700 clamp(18px,2vw,21px)/1.3 var(--head)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font:400 22px/1 var(--body);color:var(--volt2);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg);background:rgba(139,108,255,.15)}
+details p{color:var(--muted);padding:0 50px 26px 0}
+details p a{color:var(--volt2);text-decoration:underline}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:20px}.faq-grid img{display:none}}
+
+/* logo / press */
+.press{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--card)}
+.press>img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}
+.press-body{padding:clamp(28px,5vw,56px);display:flex;flex-direction:column;justify-content:center}
+.press-body blockquote{margin:22px 0 28px;padding-left:18px;border-left:2px solid var(--volt);color:var(--muted);font-style:italic}
+.press-body blockquote cite{display:block;margin-top:8px;font-style:normal;font-size:13px;color:var(--dim)}
+.press-cta{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:800px){.press{grid-template-columns:1fr}}
+
+/* final cta + footer */
+.final{text-align:center;padding:120px 0;overflow:hidden;isolation:isolate}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/crowd-back-1090.webp) center 35%/cover;opacity:.28}
+.final::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(var(--bg),transparent 40%,transparent 60%,var(--bg))}
+.final h2{font-size:clamp(38px,7vw,88px);max-width:900px;margin:18px auto 30px}
+footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area-inset-bottom))}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+footer p{font-size:13.5px;color:var(--dim)}
+.socials{display:flex;gap:10px}
+.socials a{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);transition:.2s}
+.socials a:hover{color:#fff;border-color:var(--volt);background:rgba(139,108,255,.12)}
+.socials svg{width:20px;height:20px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .marquee-track{animation:none}
+  .flash{display:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M14.6 1.5 4.2 13.4h6.3L8.9 22.5l10.9-12.6h-6.4z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4.9 2.9.8 3.4.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 0 1 0 19.6zM12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7A11.9 11.9 0 0 0 24 11.9C24 5.3 18.6 0 12 0z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r=".6" fill="currentColor"/></g></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22z"/></symbol>
+  <symbol id="i-sc" viewBox="0 0 24 24"><path fill="currentColor" d="M1 14.6c0 .8.3 1.5.8 1.9l.2-2-.2-2c-.5.4-.8 1.2-.8 2.1zm2.1-3.3-.2 3.3.2 3.1c.1.2.3.2.4 0l.2-3.1-.2-3.3c-.1-.2-.3-.2-.4 0zm1.9-.9-.2 4.2.2 3.2c0 .2.4.2.4 0l.3-3.2-.3-4.2c0-.2-.4-.2-.4 0zm1.9-.3-.2 4.5.2 3.2c0 .3.5.3.5 0l.2-3.2-.2-4.5c0-.3-.5-.3-.5 0zm1.9-.6-.2 5.1.2 3.1c0 .3.6.3.6 0l.2-3.1-.2-5.1c0-.3-.6-.3-.6 0zm1.9-1.3-.1 6.4.1 3c0 .4.7.4.7 0l.2-3-.2-6.4c0-.4-.7-.4-.7 0zm2.2-1c-.2 0-.4.2-.4.4v10.3c0 .2.2.4.4.4h7.5a3.8 3.8 0 0 0 .1-7.6c-.5 0-1 .1-1.4.3a5.8 5.8 0 0 0-6.2-3.8z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></g></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m-5-5 5 5 5-5M4 20h16"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></g></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></g></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></g></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="DJ Thorax — naar boven"><img src="img/thorax-wordmark.png" alt="Thorax" width="738" height="200"></a>
+    <nav class="menu" id="menu">
+      <a href="#over">Over</a>
+      <a href="#referenties">Referenties</a>
+      <a href="#mixes">Mixes</a>
+      <a href="#licht-geluid">Licht &amp; Geluid</a>
+      <a href="#faq">FAQ</a>
+      <a href="#logo">Logo</a>
+      <a href="#boeken" class="btn btn-volt">Boek Thorax</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <!-- desktop-only backdrop photo; phones get a 1px placeholder so it isn't downloaded -->
+  <div class="hero-bg"><picture>
+    <source media="(min-width:900px)" srcset="img/hero-stage-640.webp 640w, img/hero-stage-1200.webp 1200w, img/hero-stage-1536.webp 1536w" sizes="100vw">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1536" height="1910" alt="">
+  </picture></div>
+  <div class="flash" id="flash"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">DJ · West-Vlaanderen · België</span>
+      <img class="hero-mark" src="img/thorax-wordmark.png" alt="Thorax" width="738" height="200">
+      <h1>Good music isn’t just heard — <b>it’s felt.</b></h1>
+      <div class="hero-cta">
+        <a href="#boeken" class="btn btn-volt">Vraag een offerte <svg><use href="#i-arrow"/></svg></a>
+        <a href="#mixes" class="btn btn-ghost"><svg><use href="#i-sc"/></svg> Beluister mixes</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <video id="heroVideo" muted loop playsinline preload="none" disablepictureinpicture aria-hidden="true" poster="img/hero-video-poster.webp">
+        <source src="video/hero-loop.av1.mp4" type='video/mp4; codecs="av01.0.05M.08"'>
+        <source src="video/hero-loop.hevc.mp4" type='video/mp4; codecs="hvc1.1.6.L93.B0"'>
+        <source src="video/hero-loop.h264.mp4" type="video/mp4">
+      </video>
+      <button class="vid-sound" id="openVideo" type="button"><svg><use href="#i-sound"/></svg> Bekijk met geluid</button>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+<!-- OVER -->
+<section id="over">
+  <div class="wrap about-grid">
+    <div class="about-photos reveal">
+      <img src="img/truss-640.webp" srcset="img/truss-640.webp 640w, img/truss-1200.webp 1200w, img/truss-1365.webp 1365w" sizes="(max-width:900px) 80vw, 460px" width="1365" height="1832" alt="Thorax draait onder een lichttruss" loading="lazy">
+      <img src="img/red-shirt-516.webp" srcset="img/red-shirt-516.webp 516w" sizes="300px" width="516" height="622" alt="Thorax met koptelefoon achter de decks" loading="lazy">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Over Thorax</span>
+      <h2>Van meezinger<br>tot <span class="hl">rave</span></h2>
+      <p class="lead">Thorax is een jonge, groeiende all-round DJ die het podium bestormt. Een set zit vol variatie: van tijdloze klassiekers tot moderne beats, van meezingers tot pure rave-energie. Voor elke generatie en stemming is er iets.</p>
+      <div class="pillars">
+        <div class="pillar"><i><svg><use href="#i-music"/></svg></i><div><b>Lezen van het publiek</b><p>Geen vaste playlist: de set groeit mee met de zaal, van aperitief tot afsluiter.</p></div></div>
+        <div class="pillar"><i><svg><use href="#i-users"/></svg></i><div><b>Elk soort feest</b><p>Fuiven, festivals, jeugdbewegingen, bedrijfsfeesten, verjaardagen en trouwfeesten.</p></div></div>
+        <div class="pillar"><i><svg><use href="#i-doc"/></svg></i><div><b>Zorgeloos geregeld</b><p>Offerte op maat, facturatie mogelijk en een geldige DJ-licentie (Unisono).</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENTIES -->
+<section id="referenties" style="padding-top:40px">
+  <div class="wrap">
+    <div class="ref-head reveal">
+      <div>
+        <span class="eyebrow">Referenties</span>
+        <h2>Hier ging het<br>dak <span class="hl">eraf</span></h2>
+        <p class="lead">Een greep uit de events waar Thorax al draaide.</p>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filter op gemeente"></div>
+    </div>
+    <div class="refs" id="refs"></div>
+    <div class="private reveal"><svg width="22" height="22" style="color:var(--volt2);flex:none"><use href="#i-bolt"/></svg><p>Daarnaast ook <b>privéfeesten</b> zoals personeelsfeesten, verjaardagsfeesten en trouwfeesten.</p></div>
+
+    <div class="gallery reveal" id="gallery">
+      <button class="g1"><img src="img/purple-decks-640.webp" srcset="img/purple-decks-640.webp 640w, img/purple-decks-1200.webp 1200w, img/purple-decks-1527.webp 1527w" sizes="(max-width:760px) 100vw, 40vw" width="1527" height="2048" data-full="img/purple-decks-1527.webp" alt="Thorax in paars licht achter Pioneer-decks" loading="lazy"></button>
+      <button class="g2"><img src="img/crowd-bw-640.webp" srcset="img/crowd-bw-640.webp 640w, img/crowd-bw-1200.webp 1200w, img/crowd-bw-1920.webp 1920w" sizes="(max-width:760px) 100vw, 40vw" width="1920" height="1280" data-full="img/crowd-bw-1920.webp" alt="Volle dansvloer op een bal" loading="lazy"></button>
+      <button class="g3"><img src="img/crowd-back-640.webp" srcset="img/crowd-back-640.webp 640w, img/crowd-back-1090.webp 1090w" sizes="(max-width:760px) 100vw, 40vw" width="1090" height="1355" data-full="img/crowd-back-1090.webp" alt="Thorax van achteren, met zicht op het publiek" loading="lazy"></button>
+      <button class="g4"><img src="img/outdoor-768.webp" srcset="img/outdoor-768.webp 768w" sizes="(max-width:760px) 100vw, 40vw" width="768" height="927" data-full="img/outdoor-768.webp" alt="Thorax op een buitenpodium" loading="lazy"></button>
+      <button class="g5"><img src="img/couleur-lasers-640.webp" srcset="img/couleur-lasers-640.webp 640w, img/couleur-lasers-1200.webp 1200w, img/couleur-lasers-1920.webp 1920w" sizes="(max-width:760px) 100vw, 40vw" width="1920" height="1280" data-full="img/couleur-lasers-1920.webp" alt="Thorax tussen blauwe lasers" loading="lazy"></button>
+      <button class="g6"><img src="img/hall-lights-640.webp" srcset="img/hall-lights-640.webp 640w, img/hall-lights-1200.webp 1200w, img/hall-lights-1920.webp 1920w" sizes="(max-width:760px) 100vw, 40vw" width="1920" height="1440" data-full="img/hall-lights-1920.webp" alt="Feestzaal met moving heads en lichtshow" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<!-- MIXES -->
+<section id="mixes" class="mixes">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Mixes</span>
+      <h2>Druk op <span class="hl">play</span></h2>
+      <p class="lead">Beluister de mixtapes op SoundCloud, of laat een mix maken die volledig op jouw event is afgestemd.</p>
+    </div>
+    <div class="mix-grid">
+      <div class="panel sc reveal">
+        <div class="sc-top"><b>Mixes op SoundCloud</b><a href="https://soundcloud.com/thor-tack-123430728" target="_blank" rel="noopener">Open in SoundCloud <svg width="14" height="14"><use href="#i-arrow"/></svg></a></div>
+        <iframe title="SoundCloud mixes van Thorax" loading="lazy" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/thor-tack-123430728&color=%238b6cff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"></iframe>
+      </div>
+      <div class="panel reveal">
+        <span class="eyebrow">Custom mixes</span>
+        <h3 style="margin-top:14px">Een mix die klopt van begin tot einde</h3>
+        <p>Geen losse playlist, maar een zorgvuldig opgebouwde set met energie en vloeiende overgangen — afgestemd op jouw doel, publiek en vibe. Ideaal voor een opwarmer, bedrijfsvideo, sportevent of je eigen feest.</p>
+        <ol class="steps">
+          <li>Jij deelt je doel, doelgroep en gewenste vibe</li>
+          <li>Ik stel de juiste flow samen</li>
+          <li>Je ontvangt de eerste versie</li>
+          <li>Feedback → final version</li>
+        </ol>
+        <a href="#boeken" class="btn btn-volt" data-prefill="Custom mix">Vraag een custom mix aan <svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LICHT & GELUID -->
+<section id="licht-geluid">
+  <div class="wrap ls-grid">
+    <div class="reveal">
+      <span class="eyebrow">Licht &amp; Geluid</span>
+      <h2>Eén aanspreekpunt,<br><span class="hl">volledige show</span></h2>
+      <p class="lead">Niet enkel op zoek naar een DJ, maar ook naar licht &amp; geluid? Laat het weten en er wordt een pakket op maat gemaakt. Samen met de verhuurder maken we er een geslaagd feest van — of het nu een verjaardag, personeelsfeest of fuif is.</p>
+      <ul class="checks">
+        <li><span><b>Pakket op maat</b> — afgestemd op zaal, publiek en budget</span></li>
+        <li><span><b>Alles via Thorax</b> — één contact, één planning</span></li>
+        <li><span><b>Effecten mogelijk</b> — moving heads, lasers, sparkulars…</span></li>
+      </ul>
+      <p style="margin-top:30px;font-size:14px;color:var(--dim)">Samenwerkingen met verhuurders</p>
+      <div class="partners">
+        <div class="partner main"><small>Vaste partner</small>VisionSound</div>
+        <div class="partner"><small>Ook met</small>Dekasound</div>
+        <div class="partner"><small>Ook met</small>Fx Projects</div>
+      </div>
+    </div>
+    <div class="ls-photos reveal">
+      <img src="img/sparkulars-640.webp" srcset="img/sparkulars-640.webp 640w, img/sparkulars-1200.webp 1200w, img/sparkulars-1536.webp 1536w" sizes="(max-width:900px) 50vw, 320px" width="1536" height="2048" alt="Twee sparkulars in actie" loading="lazy">
+      <img src="img/moving-heads-632.webp" srcset="img/moving-heads-632.webp 632w" sizes="(max-width:900px) 50vw, 320px" width="632" height="360" alt="Vier moving heads in paars licht" loading="lazy">
+      <img src="img/decks-328.webp" srcset="img/decks-328.webp 328w" sizes="(max-width:900px) 50vw, 320px" width="328" height="638" alt="Pioneer DJ-setup" loading="lazy">
+      <img src="img/hall-lights-640.webp" srcset="img/hall-lights-640.webp 640w, img/hall-lights-1200.webp 1200w, img/hall-lights-1920.webp 1920w" sizes="(max-width:900px) 100vw, 640px" width="1920" height="1440" alt="Feestzaal met lichtshow" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- BOEKEN -->
+<section id="boeken" class="book">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center">
+      <span class="eyebrow">Boeken</span>
+      <h2>Boek <span class="hl">Thorax</span></h2>
+      <p class="lead" style="margin:0 auto">Elk feest is anders, dus je krijgt een vrijblijvende offerte op maat. Vul het formulier in en je hoort zo snel mogelijk van me.</p>
+    </div>
+
+    <div class="book-grid">
+      <form class="panel reveal" id="bookForm" novalidate>
+        <div id="formBody">
+          <fieldset class="fs">
+            <legend>Jouw gegevens</legend>
+            <div class="field"><label for="f-fn">Voornaam <i>*</i></label><input id="f-fn" name="entry.1829174241" required autocomplete="given-name"></div>
+            <div class="field"><label for="f-ln">Achternaam <i>*</i></label><input id="f-ln" name="entry.1183264836" required autocomplete="family-name"></div>
+            <div class="field full"><label for="f-org">Bedrijfsnaam / organisatie</label><input id="f-org" name="entry.177049678" autocomplete="organization" placeholder="Optioneel"></div>
+            <div class="field"><label for="f-mail">E-mailadres <i>*</i></label><input id="f-mail" type="email" name="entry.1710891049" required autocomplete="email"></div>
+            <div class="field"><label for="f-tel">Telefoonnummer <i>*</i></label><input id="f-tel" type="tel" name="entry.1713797247" required autocomplete="tel"></div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend>Het evenement</legend>
+            <div class="field full"><label for="f-ev">Naam van het evenement <i>*</i></label><input id="f-ev" name="entry.912097730" required></div>
+            <div class="field full"><label for="f-date">Datum <i>*</i></label><input id="f-date" type="date" required></div>
+            <div class="field"><label for="f-start">Begintijd <i>*</i></label><input id="f-start" type="time" required></div>
+            <div class="field"><label for="f-end">Eindtijd <i>*</i></label><input id="f-end" type="time" required></div>
+            <div class="field full"><label for="f-loc">Adres / locatie <i>*</i></label><input id="f-loc" name="entry.1612804761" required autocomplete="street-address"></div>
+            <div class="field full" role="radiogroup" aria-labelledby="q-type">
+              <span class="q" id="q-type">Soort evenement <i>*</i></span>
+              <div class="opts" data-name="entry.967309014" data-other="Andere"></div>
+              <input class="other" id="f-type-other" placeholder="Welk soort evenement?" style="background:#0a0912;border:1px solid var(--line);border-radius:12px;padding:14px 15px;width:100%">
+            </div>
+            <div class="field full" role="radiogroup" aria-labelledby="q-size">
+              <span class="q" id="q-size">Verwachte opkomst <i>*</i></span>
+              <div class="opts" data-name="entry.583213514"></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend>Techniek &amp; administratie</legend>
+            <div class="field full" role="radiogroup" aria-labelledby="q-gear">
+              <span class="q" id="q-gear">Is er een DJ-controller aanwezig op locatie? <i>*</i></span>
+              <div class="opts" data-name="entry.2040819063"></div>
+            </div>
+            <div class="field full" id="gearField"><label for="f-gear">Zo ja, welke gear staat er klaar?</label><input id="f-gear" name="entry.759367685" placeholder="bv. Pioneer XDJ-XZ, 2× CDJ-3000 + DJM-900"></div>
+            <div class="field full" role="radiogroup" aria-labelledby="q-ls">
+              <span class="q" id="q-ls">Wil je licht &amp; geluid huren via Thorax? <i>*</i></span>
+              <div class="opts" data-name="entry.1395671178"></div>
+            </div>
+            <div class="field full" role="radiogroup" aria-labelledby="q-inv">
+              <span class="q" id="q-inv">Is een factuur noodzakelijk? <i>*</i></span>
+              <div class="opts" data-name="entry.535455282"></div>
+            </div>
+            <div class="field full">
+              <label for="f-spotify">Spotify-playlist met muziek die je leuk vindt</label>
+              <div class="spot-input">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.5 17.3a.75.75 0 0 1-1 .25c-2.85-1.74-6.43-2.13-10.66-1.17a.75.75 0 1 1-.33-1.46c4.62-1.06 8.6-.6 11.74 1.33.36.21.47.68.25 1.05zm1.47-3.27a.94.94 0 0 1-1.29.3c-3.26-2-8.23-2.58-12.09-1.41a.94.94 0 1 1-.54-1.8c4.4-1.33 9.88-.68 13.61 1.61.44.27.58.85.31 1.3zm.13-3.4C15.2 8.3 8.75 8.08 5.02 9.21a1.13 1.13 0 1 1-.65-2.16c4.28-1.3 11.4-1.05 15.9 1.62a1.13 1.13 0 0 1-1.16 1.95z"/></svg>
+                <input id="f-spotify" type="url" inputmode="url" placeholder="https://open.spotify.com/playlist/…" autocomplete="off">
+              </div>
+              <small class="hint" id="spotHint">Optioneel: zo weet ik meteen welke sfeer je zoekt.</small>
+              <div class="spot-embed" id="spotEmbed"></div>
+            </div>
+            <div class="field full"><label for="f-note">Opmerkingen</label><textarea id="f-note" name="entry.959149459" placeholder="Muziekwensen, dresscode, parking, …"></textarea></div>
+          </fieldset>
+
+          <div class="form-foot">
+            <p>Je gegevens worden enkel gebruikt om je aanvraag te beantwoorden. Liever via Google Forms? <a href="https://forms.gle/6aj7n5X9AyNZN9Qz7" target="_blank" rel="noopener">Open het formulier</a>.</p>
+            <button class="btn btn-volt" type="submit" id="submitBtn">Verstuur aanvraag <svg><use href="#i-arrow"/></svg></button>
+          </div>
+          <p class="err" id="err" role="alert"></p>
+        </div>
+        <div class="done" id="done" role="status">
+          <svg class="bolt"><use href="#i-bolt"/></svg>
+          <h3>Aanvraag verstuurd</h3>
+          <p>Bedankt! Je ontvangt zo snel mogelijk een vrijblijvende offerte. Dringend? Bel of stuur een bericht naar <a href="tel:+32467005708" style="color:#fff">+32 467 00 57 08</a>.</p>
+        </div>
+      </form>
+
+      <aside class="contact reveal">
+        <a class="c-item" href="tel:+32467005708"><i><svg><use href="#i-phone"/></svg></i><div><small>Bellen</small><b>+32 467 00 57 08</b></div></a>
+        <a class="c-item" href="https://wa.me/32467005708" target="_blank" rel="noopener"><i><svg><use href="#i-wa"/></svg></i><div><small>WhatsApp</small><b>Stuur een bericht</b></div></a>
+        <a class="c-item" href="mailto:thortack4@gmail.com?subject=Boeking%20DJ%20Thorax"><i><svg><use href="#i-mail"/></svg></i><div><small>E-mail</small><b>thortack4@gmail.com</b></div></a>
+        <div class="badges">
+          <div><span>DJ-licentie (Unisono)</span><b class="ok">✓ In orde</b></div>
+          <div><span>Facturatie</span><b class="ok">✓ Mogelijk</b></div>
+          <div><span>BTW-nummer</span><b>BE1031.174.534</b></div>
+        </div>
+        <div class="socials" style="justify-content:flex-start;margin-top:4px">
+          <a href="https://www.instagram.com/dj_thorax/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="https://www.facebook.com/thor.tack/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+          <a href="https://soundcloud.com/thor-tack-123430728" target="_blank" rel="noopener" aria-label="SoundCloud"><svg><use href="#i-sc"/></svg></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap faq-grid">
+    <div class="reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Veelgestelde<br><span class="hl">vragen</span></h2>
+      <p class="lead">Staat je vraag er niet tussen? Stuur gerust een berichtje.</p>
+      <img src="img/couleur-lasers-640.webp" srcset="img/couleur-lasers-640.webp 640w, img/couleur-lasers-1200.webp 1200w, img/couleur-lasers-1920.webp 1920w" sizes="(max-width:900px) 1px, 440px" width="1920" height="1280" alt="" loading="lazy">
+    </div>
+    <div class="reveal">
+      <details open>
+        <summary>Van waar komt de artiestennaam Thorax?</summary>
+        <p>Thorax is een samensmelting van mijn eigen naam, <b>Thor</b>, en de DJ-naam van mijn vader, <b>Fax</b>. Het symboliseert niet alleen mijn eigen muzikale identiteit, maar ook de invloed van mijn vader op mijn carrière.</p>
+      </details>
+      <details>
+        <summary>Wat voor muziek draai je?</summary>
+        <p>Een set van Thorax zit vol variatie: van tijdloze klassiekers tot moderne beats, van meezingers tot pure rave-energie. Voor elke generatie en stemming is er iets.</p>
+      </details>
+      <details>
+        <summary>Hoe kan ik je boeken en wat kost het?</summary>
+        <p>Vul het <a href="#boeken">boekingsformulier</a> in of neem direct contact op. Omdat elk feest anders is, werk ik met offertes op maat. Na je aanvraag ontvang je zo snel mogelijk een vrijblijvende offerte.</p>
+      </details>
+      <details>
+        <summary>Voor welke soorten feesten kan ik je boeken?</summary>
+        <p>Van privéfeesten tot grote publieke evenementen en fuiven. Twijfel je of mijn stijl bij jouw event past? Neem contact op of bekijk de <a href="#referenties">referenties</a> om te zien waar ik al gedraaid heb.</p>
+      </details>
+      <details>
+        <summary>Breng je zelf materiaal mee?</summary>
+        <p>Is er geen DJ-controller op locatie, dan voorzie ik die zelf — geef dat gewoon aan in het formulier. Heb je ook licht &amp; geluid nodig, dan stel ik samen met een verhuurder een <a href="#licht-geluid">pakket op maat</a> samen.</p>
+      </details>
+      <details>
+        <summary>Kan ik een factuur krijgen?</summary>
+        <p>Ja. Facturatie is mogelijk (BTW BE1031.174.534) en ik beschik over een geldige DJ-licentie via Unisono.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section id="logo" style="padding-top:40px">
+  <div class="wrap">
+    <div class="press reveal">
+      <img src="img/logo-640.webp" srcset="img/logo-640.webp 640w, img/logo-1200.webp 1200w, img/logo-1600.webp 1600w" sizes="(max-width:800px) 100vw, 590px" width="1600" height="1600" alt="Thorax-logo met bliksem" loading="lazy">
+      <div class="press-body">
+        <span class="eyebrow">Logo &amp; persmateriaal</span>
+        <h2 style="font-size:clamp(30px,4vw,46px)">Zet Thorax<br>op je <span class="hl">affiche</span></h2>
+        <p class="lead">Organiseer je een event met Thorax in de line-up? Download het logo in hoge resolutie voor je affiche, socials of scherm.</p>
+        <blockquote>De robuuste en gedurfde letters geven perfect de energieke persoonlijkheid van Thorax weer. De bliksemschicht symboliseert de energie die hij aan elk optreden geeft.<cite>— Studio Noedel, ontwerper van het logo</cite></blockquote>
+        <div class="press-cta">
+          <a class="btn btn-volt" href="img/thorax-logo.png" download="Thorax-logo.png"><svg><use href="#i-dl"/></svg> Download logo (PNG)</a>
+          <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1Pm3MjDRCwSjRm3CK7XjZn7PxqT9fgWbk" target="_blank" rel="noopener">Alle bestanden</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <span class="eyebrow">Klaar om te knallen?</span>
+    <h2>Maak van je feest een <span class="hl">storm</span></h2>
+    <a href="#boeken" class="btn btn-volt">Vraag een offerte <svg><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="yr"></span> DJ Thorax · Thor Tack · BTW BE1031.174.534</p>
+    <p style="font-style:italic">Good music isn’t just heard — it’s felt.</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/dj_thorax/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+      <a href="https://www.facebook.com/thor.tack/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+      <a href="https://soundcloud.com/thor-tack-123430728" target="_blank" rel="noopener" aria-label="SoundCloud"><svg><use href="#i-sc"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-label="Video met geluid">
+  <video id="liveVideo" controls playsinline preload="none" poster="img/hero-video-poster.webp">
+    <source src="video/thorax-live.av1.mp4" type='video/mp4; codecs="av01.0.05M.08, mp4a.40.2"'>
+    <source src="video/thorax-live.hevc.mp4" type='video/mp4; codecs="hvc1.1.6.L93.B0, mp4a.40.2"'>
+    <source src="video/thorax-live.h264.mp4" type="video/mp4">
+  </video>
+  <button class="lb-close" aria-label="Sluiten">×</button>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto">
+  <img id="lbImg" alt="">
+  <button class="lb-close" aria-label="Sluiten">×</button>
+  <button class="lb-prev" aria-label="Vorige">‹</button>
+  <button class="lb-next" aria-label="Volgende">›</button>
+</div>
+
+<script>
+/* ---------- data ---------- */
+const REFS = [
+  ["Beach Party","Ingelmunster",3],
+  ["Dance With The Duvel","Ingelmunster",3],
+  ["Laspidy","Lendelede",3],
+  ["Mandel's Midnight","Ingelmunster",2],
+  ["Chirouge","Ingelmunster",2],
+  ["Cityrun","Ingelmunster",2],
+  ["Kontrabasfeesten","Ingelmunster",2],
+  ["Thunderball","Izegem",2],
+  ["O'Douce — DJ-workshop gegeven","Nazareth-De Pinte",1],
+  ["100 Dagen — Lemonbar","Wetteren",1],
+  ["Party Instinct","Ledegem",1],
+  ["50 Dagen","Roeselare",1],
+  ["JOC","Dadizele",1],
+  ["Megafuif","Izegem",1],
+  ["Fat Asspi","Lendelede",1],
+  ["Bal — Sint-Gertrudiscollege","Wetteren",1],
+  ["Batjes","Izegem",1],
+  ["Zomerbar Chiro Jefri","Ingelmunster",1],
+  ["Mexican Night","Izegem",1],
+  ["Ripcup","Izegem",1],
+  ["Kickoff","Izegem",1],
+  ["Nacht van de Jeugdbeweging (JH Kontrabas)","Ingelmunster",1],
+];
+const POSTCODE = {"Ingelmunster":"8770","Lendelede":"8860","Izegem":"8870","Nazareth-De Pinte":"9810","Wetteren":"9230","Ledegem":"8880","Roeselare":"8800","Dadizele":"8890"};
+
+const FORM_OPTS = {
+  "entry.967309014": ["Fuif","Festival","Verjaardag","Bruiloft","Zakelijk event"],
+  "entry.583213514": ["0 - 100","100 - 300","300 - 1000","1000+"],
+  "entry.2040819063": ["Ja","Nee, de DJ (Thorax) dient deze zelf te voorzien"],
+  "entry.1395671178": ["Ja","Nee","Weet ik nog niet"],
+  "entry.535455282": ["Ja","Nee"],
+};
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdZOa82iciUcYy3WFPptKZg1fNa-Nm8dsX_5_utkuXbpza9UQ/formResponse";
+
+const $ = (s, el=document) => el.querySelector(s);
+const $$ = (s, el=document) => [...el.querySelectorAll(s)];
+const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+
+/* ---------- marquee ---------- */
+const names = REFS.map(r => `<span>${esc(r[0].split(" — ")[0])}</span>`).join("");
+$("#marquee").innerHTML = names + names;
+
+/* ---------- references ---------- */
+const towns = [...new Set(REFS.map(r => r[1]))];
+const byTown = towns.map(t => [t, REFS.filter(r => r[1] === t).length]).sort((a, b) => b[1] - a[1]);
+$("#chips").innerHTML = `<button class="chip on" data-town="">Alle</button>` +
+  byTown.map(([t]) => `<button class="chip" data-town="${esc(t)}">${esc(t)}</button>`).join("");
+$("#refs").innerHTML = REFS.map(([n, t, c]) =>
+  `<div class="ref" data-town="${esc(t)}"><div><b>${esc(n)}</b><span>${POSTCODE[t]} ${esc(t)}</span></div>${c > 1 ? `<em>${c}×</em>` : ""}</div>`).join("");
+$("#chips").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  $$(".chip").forEach(c => c.classList.toggle("on", c === b));
+  $$(".ref").forEach(r => r.classList.toggle("hide", !!b.dataset.town && r.dataset.town !== b.dataset.town));
+});
+
+/* ---------- nav ---------- */
+const nav = $("#nav"), burger = $("#burger");
+const onScroll = () => nav.classList.toggle("scrolled", scrollY > 30);
+addEventListener("scroll", onScroll, { passive: true }); onScroll();
+burger.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open);
+});
+$$(".menu a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
+
+const sections = $$("main section[id]");
+const links = $$(".menu a:not(.btn)");
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) links.forEach(l => l.classList.toggle("active", l.getAttribute("href") === "#" + en.target.id));
+  });
+}, { rootMargin: "-45% 0px -50% 0px" });
+sections.forEach(s => sectionObserver.observe(s));
+
+/* ---------- reveal ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+$$(".reveal").forEach(el => io.observe(el));
+
+/* ---------- lightning flash ---------- */
+const flash = $("#flash");
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const strike = () => {
+    if (scrollY < innerHeight) { flash.classList.remove("on"); void flash.offsetWidth; flash.classList.add("on"); }
+    setTimeout(strike, 5000 + Math.random() * 6000);
+  };
+  setTimeout(strike, 1400);
+}
+
+/* ---------- hero video ---------- */
+// Muted loop starts after the page has loaded; skipped on Save-Data / 2G
+// and for reduced motion (the poster frame stays). Pauses while the hero is off-screen.
+const heroVideo = $("#heroVideo");
+const conn = navigator.connection;
+const allowLoop = !matchMedia("(prefers-reduced-motion: reduce)").matches &&
+  !(conn && (conn.saveData || /2g$/.test(conn.effectiveType || "")));
+let heroVisible = true, modalOpen = false;
+const playHero = () => { if (allowLoop && heroVisible && !modalOpen && !document.hidden) heroVideo.play().catch(() => {}); };
+if (document.readyState === "complete") playHero(); else addEventListener("load", playHero, { once: true });
+new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; heroVisible ? playHero() : heroVideo.pause(); }).observe($(".hero"));
+document.addEventListener("visibilitychange", () => document.hidden ? heroVideo.pause() : playHero());
+
+const vmodal = $("#vmodal"), liveVideo = $("#liveVideo"), openBtn = $("#openVideo");
+const openVideo = () => {
+  modalOpen = true; heroVideo.pause();
+  vmodal.classList.add("open");
+  liveVideo.currentTime = 0; liveVideo.play().catch(() => {});
+  $(".lb-close", vmodal).focus();
+};
+const closeVideo = () => {
+  modalOpen = false; liveVideo.pause();
+  vmodal.classList.remove("open"); openBtn.focus(); playHero();
+};
+openBtn.addEventListener("click", openVideo);
+$(".lb-close", vmodal).addEventListener("click", closeVideo);
+vmodal.addEventListener("click", e => { if (e.target === vmodal) closeVideo(); });
+addEventListener("keydown", e => { if (e.key === "Escape" && modalOpen) closeVideo(); });
+
+/* ---------- lightbox ---------- */
+const gImgs = $$("#gallery img"), lb = $("#lightbox"), lbImg = $("#lbImg");
+let cur = 0;
+const show = i => { cur = (i + gImgs.length) % gImgs.length; lbImg.src = gImgs[cur].dataset.full || gImgs[cur].currentSrc; lbImg.alt = gImgs[cur].alt; };
+gImgs.forEach((img, i) => img.parentElement.addEventListener("click", () => { show(i); lb.classList.add("open"); $(".lb-close").focus(); }));
+const closeLb = () => lb.classList.remove("open");
+$(".lb-close").onclick = closeLb;
+$(".lb-prev").onclick = () => show(cur - 1);
+$(".lb-next").onclick = () => show(cur + 1);
+lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") closeLb();
+  if (e.key === "ArrowLeft") show(cur - 1);
+  if (e.key === "ArrowRight") show(cur + 1);
+});
+
+/* ---------- booking form ---------- */
+$$(".opts").forEach(box => {
+  const name = box.dataset.name;
+  const opts = [...FORM_OPTS[name]];
+  if (box.dataset.other) opts.push(box.dataset.other);
+  box.innerHTML = opts.map((o, i) =>
+    `<label><input type="radio" name="${name}" value="${i === FORM_OPTS[name].length ? "__other_option__" : esc(o)}" required><span>${esc(o)}</span></label>`).join("");
+});
+const typeOther = $("#f-type-other");
+$$('input[name="entry.967309014"]').forEach(r => r.addEventListener("change", () => {
+  const isOther = r.value === "__other_option__" && r.checked;
+  typeOther.classList.toggle("show", isOther);
+  if (isOther) typeOther.focus();
+}));
+$$('input[name="entry.2040819063"]').forEach(r => r.addEventListener("change", () => {
+  $("#gearField").style.display = r.value === "Ja" ? "" : "none";
+}));
+
+// "Vraag een custom mix aan" pre-fills the remarks
+$$("[data-prefill]").forEach(a => a.addEventListener("click", () => {
+  const t = $("#f-note");
+  if (!t.value) t.value = "Ik wil graag een custom mix laten maken voor: ";
+}));
+
+// Optional Spotify playlist: validated, previewed, and sent along inside "Opmerkingen"
+// (the Google Form has no separate field for it).
+const spotIn = $("#f-spotify"), spotHint = $("#spotHint"), spotEmbed = $("#spotEmbed");
+const SPOT_HINT = spotHint.textContent;
+function parseSpotify(v) {
+  v = v.trim();
+  if (!v) return { empty: true };
+  let m = v.match(/^spotify:(playlist|album|track|artist):([A-Za-z0-9]{10,})$/);
+  if (m) return { type: m[1], id: m[2], url: `https://open.spotify.com/${m[1]}/${m[2]}` };
+  let u; try { u = new URL(/^https?:\/\//i.test(v) ? v : "https://" + v); } catch { return { bad: true }; }
+  if (/^(spotify\.link|spotify\.app\.link)$/i.test(u.hostname)) return { url: u.href }; // share link from the app: valid, no preview
+  if (!/^open\.spotify\.com$/i.test(u.hostname)) return { bad: true };
+  m = u.pathname.match(/^\/(?:intl-[a-z-]+\/)?(playlist|album|track|artist)\/([A-Za-z0-9]{10,})/i);
+  return m ? { type: m[1].toLowerCase(), id: m[2], url: `https://open.spotify.com/${m[1].toLowerCase()}/${m[2]}` } : { bad: true };
+}
+let lastEmbed = "";
+function checkSpotify() {
+  const r = parseSpotify(spotIn.value);
+  spotHint.className = "hint" + (r.bad ? " bad" : r.empty ? "" : " ok");
+  spotHint.textContent = r.empty ? SPOT_HINT : r.bad ? "Dit lijkt geen Spotify-link. Plak de link via Delen → Link kopiëren." : "Playlist ontvangen ✓";
+  const src = r.id ? `https://open.spotify.com/embed/${r.type}/${r.id}?theme=0` : "";
+  if (src !== lastEmbed) {
+    lastEmbed = src;
+    spotEmbed.innerHTML = src ? `<iframe src="${src}" title="Voorbeeld van je Spotify-playlist" loading="lazy" allow="encrypted-media"></iframe>` : "";
+  }
+  return r;
+}
+spotIn.addEventListener("input", checkSpotify);
+
+const form = $("#bookForm"), err = $("#err"), btn = $("#submitBtn");
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  err.classList.remove("show");
+
+  // validation
+  const missing = [];
+  $$("input[required]:not([type=radio]), textarea[required]", form).forEach(i => {
+    if (!i.value.trim() || !i.checkValidity()) missing.push(i);
+  });
+  $$(".opts", form).forEach(box => { if (!$("input:checked", box)) missing.push($("input", box)); });
+  const otherSel = $('input[value="__other_option__"]:checked');
+  if (otherSel && !typeOther.value.trim()) missing.push(typeOther);
+  const spot = checkSpotify();
+  if (!missing.length && spot.bad) missing.push(spotIn);
+  if (missing.length) {
+    err.textContent = missing[0] === spotIn
+      ? "Controleer de Spotify-link, of laat het veld leeg."
+      : "Vul alle verplichte velden (*) correct in.";
+    err.classList.add("show");
+    missing[0].focus();
+    missing[0].scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+
+  const fd = new FormData(form);
+  const [y, m, d] = $("#f-date").value.split("-");
+  fd.append("entry.88226329_year", y); fd.append("entry.88226329_month", +m); fd.append("entry.88226329_day", +d);
+  const [sh, sm] = $("#f-start").value.split(":");
+  fd.append("entry.1459037547_hour", sh); fd.append("entry.1459037547_minute", sm);
+  const [eh, em] = $("#f-end").value.split(":");
+  fd.append("entry.859167969_hour", eh); fd.append("entry.859167969_minute", em);
+  if (otherSel) fd.append("entry.967309014.other_option_response", typeOther.value.trim());
+  if (spot.url) {
+    const note = fd.get("entry.959149459").trim();
+    fd.set("entry.959149459", (note ? note + "\n\n" : "") + "Spotify-playlist: " + spot.url);
+  }
+
+  btn.disabled = true; btn.firstChild.textContent = "Versturen… ";
+  try {
+    await fetch(FORM_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(fd) });
+    $("#formBody").style.display = "none";
+    $("#done").classList.add("show");
+    $("#done").scrollIntoView({ behavior: "smooth", block: "center" });
+  } catch {
+    err.innerHTML = 'Versturen lukte niet. Probeer opnieuw, of gebruik <a href="https://forms.gle/6aj7n5X9AyNZN9Qz7" target="_blank" rel="noopener" style="text-decoration:underline">het Google-formulier</a>.';
+    err.classList.add("show");
+    btn.disabled = false; btn.firstChild.textContent = "Verstuur aanvraag ";
+  }
+});
+
+$("#yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
