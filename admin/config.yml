@@ -1,0 +1,184 @@
+# Content editor for djthorax.com (Sveltia CMS). Every save is a commit on main;
+# GitHub Pages rebuilds the site from _data/*.json within about a minute.
+backend:
+  name: github
+  repo: tackbruneel/djthorax
+  branch: main
+
+site_url: https://www.djthorax.com
+display_url: https://www.djthorax.com
+logo_url: /img/apple-touch-icon.png
+
+# Uploaded photos land in /img and are shrunk to a WebP of max 1600px before upload.
+media_folder: /img
+public_folder: /img
+media_libraries:
+  default:
+    config:
+      max_file_size: 26214400
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1600
+          height: 1600
+
+editor:
+  preview: false
+
+collections:
+  - name: website
+    label: Website
+    icon: web
+    files:
+      - name: referenties
+        label: "Events (referenties)"
+        file: _data/referenties.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: intro, label: Intro, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - name: events
+            label: Events
+            label_singular: Event
+            widget: list
+            summary: "{{naam}} — {{gemeente}}"
+            add_to_top: true
+            hint: "Nieuw event? Klik op 'Add Event'. Sleep om de volgorde te wijzigen."
+            fields:
+              - { name: naam, label: Naam van het event, widget: string }
+              - { name: gemeente, label: Gemeente, widget: string }
+              - { name: postcode, label: Postcode, widget: string, required: false }
+              - { name: keer, label: Aantal keer gedraaid, widget: number, value_type: int, min: 1, default: 1, hint: "Vanaf 2 verschijnt bv. '2×' op de kaart." }
+          - { name: extra, label: Tekst onder de events, widget: markdown, buttons: [bold, italic, link], editor_components: [], required: false }
+
+      - name: galerij
+        label: "Foto's (galerij)"
+        file: _data/galerij.json
+        fields:
+          - name: fotos
+            label: "Foto's"
+            label_singular: Foto
+            widget: list
+            summary: "{{beschrijving}}"
+            hint: "De eerste 6 foto's vormen het mozaïek; sleep om de volgorde te wijzigen."
+            fields:
+              - { name: foto, label: Foto, widget: image }
+              - { name: beschrijving, label: "Korte beschrijving (voor Google en blinden)", widget: string }
+
+      - name: over
+        label: Over Thorax
+        file: _data/over.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: tekst, label: Tekst, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - name: foto_groot
+            label: Grote foto
+            widget: object
+            fields:
+              - { name: foto, label: Foto, widget: image }
+              - { name: beschrijving, label: Korte beschrijving, widget: string }
+          - name: foto_klein
+            label: Kleine foto
+            widget: object
+            fields:
+              - { name: foto, label: Foto, widget: image }
+              - { name: beschrijving, label: Korte beschrijving, widget: string }
+          - name: punten
+            label: Kaartjes
+            label_singular: Kaartje
+            widget: list
+            summary: "{{titel}}"
+            fields:
+              - { name: titel, label: Titel, widget: string }
+              - { name: tekst, label: Tekst, widget: text }
+
+      - name: mixes
+        label: Mixes
+        file: _data/mixes.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*." }
+          - { name: intro, label: Intro, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - { name: custom_titel, label: Titel custom mixes, widget: string }
+          - { name: custom_tekst, label: Tekst custom mixes, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - { name: stappen, label: Stappen, label_singular: Stap, widget: list, field: { name: stap, label: Stap, widget: string } }
+
+      - name: lichtgeluid
+        label: "Licht & geluid"
+        file: _data/lichtgeluid.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: tekst, label: Tekst, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - name: voordelen
+            label: Voordelen (met vinkje)
+            label_singular: Voordeel
+            widget: list
+            summary: "{{titel}}"
+            fields:
+              - { name: titel, label: Vetgedrukt, widget: string }
+              - { name: tekst, label: Uitleg, widget: string, required: false }
+          - name: partners
+            label: Verhuurders
+            label_singular: Verhuurder
+            widget: list
+            summary: "{{naam}}"
+            fields:
+              - { name: naam, label: Naam, widget: string }
+              - { name: label, label: Klein label erboven, widget: string, required: false, hint: "bv. 'Vaste partner' of 'Ook met'" }
+              - { name: uitgelicht, label: Uitgelicht (paarse rand), widget: boolean, default: false }
+          - name: fotos
+            label: "Foto's (max. 4)"
+            label_singular: Foto
+            widget: list
+            max: 4
+            summary: "{{beschrijving}}"
+            fields:
+              - { name: foto, label: Foto, widget: image }
+              - { name: beschrijving, label: Korte beschrijving, widget: string }
+
+      - name: faq
+        label: FAQ
+        file: _data/faq.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: intro, label: Intro, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - { name: foto, label: Foto naast de vragen (enkel op computer), widget: image, required: false }
+          - name: vragen
+            label: Vragen
+            label_singular: Vraag
+            widget: list
+            summary: "{{vraag}}"
+            fields:
+              - { name: vraag, label: Vraag, widget: string }
+              - { name: antwoord, label: Antwoord, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+
+      - name: boeken
+        label: Boeken
+        file: _data/boeken.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*." }
+          - { name: intro, label: Intro boven het formulier, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+
+      - name: logo
+        label: Logo & persmateriaal
+        file: _data/logo.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: tekst, label: Tekst, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - { name: quote, label: Citaat, widget: text, required: false }
+          - { name: quote_bron, label: "Van wie is het citaat?", widget: string, required: false }
+
+      - name: algemeen
+        label: Algemeen & contact
+        file: _data/algemeen.json
+        fields:
+          - { name: ondertitel, label: Kleine tekst boven het logo, widget: string }
+          - { name: slogan, label: Slogan, widget: string, hint: "Het vetgedrukte deel tussen *sterretjes*." }
+          - { name: telefoon, label: Telefoonnummer, widget: string, hint: "Met landcode, bv. +32 467 00 57 08 (nodig voor WhatsApp)." }
+          - { name: email, label: E-mailadres, widget: string }
+          - { name: btw, label: BTW-nummer, widget: string }
+          - { name: instagram, label: Instagram-link, widget: string }
+          - { name: facebook, label: Facebook-link, widget: string }
+          - { name: soundcloud, label: SoundCloud-profiel, widget: string, hint: "Deze link bepaalt ook welke mixes in de speler staan." }
+          - { name: afsluiter_label, label: Slot – kleine tekst, widget: string }
+          - { name: afsluiter_titel, label: Slot – titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*." }
+          - { name: seo_beschrijving, label: Beschrijving voor Google, widget: text, hint: "Max. ±155 tekens. Dit zie je in de zoekresultaten." }

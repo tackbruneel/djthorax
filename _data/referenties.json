@@ -1,0 +1,139 @@
+{
+  "titel": "Hier ging het\ndak *eraf*",
+  "intro": "Een greep uit de events waar Thorax al draaide.",
+  "events": [
+    {
+      "naam": "Beach Party",
+      "gemeente": "Ingelmunster",
+      "postcode": "8770",
+      "keer": 3
+    },
+    {
+      "naam": "Dance With The Duvel",
+      "gemeente": "Ingelmunster",
+      "postcode": "8770",
+      "keer": 3
+    },
+    {
+      "naam": "Laspidy",
+      "gemeente": "Lendelede",
+      "postcode": "8860",
+      "keer": 3
+    },
+    {
+      "naam": "Mandel's Midnight",
+      "gemeente": "Ingelmunster",
+      "postcode": "8770",
+      "keer": 2
+    },
+    {
+      "naam": "Chirouge",
+      "gemeente": "Ingelmunster",
+      "postcode": "8770",
+      "keer": 2
+    },
+    {
+      "naam": "Cityrun",
+      "gemeente": "Ingelmunster",
+      "postcode": "8770",
+      "keer": 2
+    },
+    {
+      "naam": "Kontrabasfeesten",
+      "gemeente": "Ingelmunster",
+      "postcode": "8770",
+      "keer": 2
+    },
+    {
+      "naam": "Thunderball",
+      "gemeente": "Izegem",
+      "postcode": "8870",
+      "keer": 2
+    },
+    {
+      "naam": "O'Douce — DJ-workshop gegeven",
+      "gemeente": "Nazareth-De Pinte",
+      "postcode": "9810",
+      "keer": 1
+    },
+    {
+      "naam": "100 Dagen — Lemonbar",
+      "gemeente": "Wetteren",
+      "postcode": "9230",
+      "keer": 1
+    },
+    {
+      "naam": "Party Instinct",
+      "gemeente": "Ledegem",
+      "postcode": "8880",
+      "keer": 1
+    },
+    {
+      "naam": "50 Dagen",
+      "gemeente": "Roeselare",
+      "postcode": "8800",
+      "keer": 1
+    },
+    {
+      "naam": "JOC",
+      "gemeente": "Dadizele",
+      "postcode": "8890",
+      "keer": 1
+    },
+    {
+      "naam": "Megafuif",
+      "gemeente": "Izegem",
+      "postcode": "8870",
+      "keer": 1
+    },
+    {
+      "naam": "Fat Asspi",
+      "gemeente": "Lendelede",
+      "postcode": "8860",
+      "keer": 1
+    },
+    {
+      "naam": "Bal — Sint-Gertrudiscollege",
+      "gemeente": "Wetteren",
+      "postcode": "9230",
+      "keer": 1
+    },
+    {
+      "naam": "Batjes",
+      "gemeente": "Izegem",
+      "postcode": "8870",
+      "keer": 1
+    },
+    {
+      "naam": "Zomerbar Chiro Jefri",
+      "gemeente": "Ingelmunster",
+      "postcode": "8770",
+      "keer": 1
+    },
+    {
+      "naam": "Mexican Night",
+      "gemeente": "Izegem",
+      "postcode": "8870",
+      "keer": 1
+    },
+    {
+      "naam": "Ripcup",
+      "gemeente": "Izegem",
+      "postcode": "8870",
+      "keer": 1
+    },
+    {
+      "naam": "Kickoff",
+      "gemeente": "Izegem",
+      "postcode": "8870",
+      "keer": 1
+    },
+    {
+      "naam": "Nacht van de Jeugdbeweging (JH Kontrabas)",
+      "gemeente": "Ingelmunster",
+      "postcode": "8770",
+      "keer": 1
+    }
+  ],
+  "extra": "Daarnaast ook **privéfeesten** zoals personeelsfeesten, verjaardagsfeesten en trouwfeesten."
+}

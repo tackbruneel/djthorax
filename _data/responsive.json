@@ -1,0 +1,74 @@
+{
+ "/img/purple-decks-640.webp": {
+  "srcset": "/img/purple-decks-640.webp 640w, /img/purple-decks-1200.webp 1200w, /img/purple-decks-1527.webp 1527w",
+  "w": 1527,
+  "h": 2048,
+  "groot": "/img/purple-decks-1527.webp"
+ },
+ "/img/outdoor-768.webp": {
+  "srcset": "/img/outdoor-768.webp 768w",
+  "w": 768,
+  "h": 927,
+  "groot": "/img/outdoor-768.webp"
+ },
+ "/img/truss-640.webp": {
+  "srcset": "/img/truss-640.webp 640w, /img/truss-1200.webp 1200w, /img/truss-1365.webp 1365w",
+  "w": 1365,
+  "h": 1832,
+  "groot": "/img/truss-1365.webp"
+ },
+ "/img/red-shirt-516.webp": {
+  "srcset": "/img/red-shirt-516.webp 516w",
+  "w": 516,
+  "h": 622,
+  "groot": "/img/red-shirt-516.webp"
+ },
+ "/img/crowd-back-640.webp": {
+  "srcset": "/img/crowd-back-640.webp 640w, /img/crowd-back-1090.webp 1090w",
+  "w": 1090,
+  "h": 1355,
+  "groot": "/img/crowd-back-1090.webp"
+ },
+ "/img/sparkulars-640.webp": {
+  "srcset": "/img/sparkulars-640.webp 640w, /img/sparkulars-1200.webp 1200w, /img/sparkulars-1536.webp 1536w",
+  "w": 1536,
+  "h": 2048,
+  "groot": "/img/sparkulars-1536.webp"
+ },
+ "/img/moving-heads-632.webp": {
+  "srcset": "/img/moving-heads-632.webp 632w",
+  "w": 632,
+  "h": 360,
+  "groot": "/img/moving-heads-632.webp"
+ },
+ "/img/hall-lights-640.webp": {
+  "srcset": "/img/hall-lights-640.webp 640w, /img/hall-lights-1200.webp 1200w, /img/hall-lights-1920.webp 1920w",
+  "w": 1920,
+  "h": 1440,
+  "groot": "/img/hall-lights-1920.webp"
+ },
+ "/img/decks-328.webp": {
+  "srcset": "/img/decks-328.webp 328w",
+  "w": 328,
+  "h": 638,
+  "groot": "/img/decks-328.webp"
+ },
+ "/img/crowd-bw-640.webp": {
+  "srcset": "/img/crowd-bw-640.webp 640w, /img/crowd-bw-1200.webp 1200w, /img/crowd-bw-1920.webp 1920w",
+  "w": 1920,
+  "h": 1280,
+  "groot": "/img/crowd-bw-1920.webp"
+ },
+ "/img/couleur-lasers-640.webp": {
+  "srcset": "/img/couleur-lasers-640.webp 640w, /img/couleur-lasers-1200.webp 1200w, /img/couleur-lasers-1920.webp 1920w",
+  "w": 1920,
+  "h": 1280,
+  "groot": "/img/couleur-lasers-1920.webp"
+ },
+ "/img/logo-640.webp": {
+  "srcset": "/img/logo-640.webp 640w, /img/logo-1200.webp 1200w, /img/logo-1600.webp 1600w",
+  "w": 1600,
+  "h": 1600,
+  "groot": "/img/logo-1600.webp"
+ }
+}

@@ -1,0 +1,28 @@
+{
+  "fotos": [
+    {
+      "foto": "/img/purple-decks-640.webp",
+      "beschrijving": "Thorax in paars licht achter Pioneer-decks"
+    },
+    {
+      "foto": "/img/crowd-bw-640.webp",
+      "beschrijving": "Volle dansvloer op een bal"
+    },
+    {
+      "foto": "/img/crowd-back-640.webp",
+      "beschrijving": "Thorax van achteren, met zicht op het publiek"
+    },
+    {
+      "foto": "/img/outdoor-768.webp",
+      "beschrijving": "Thorax op een buitenpodium"
+    },
+    {
+      "foto": "/img/couleur-lasers-640.webp",
+      "beschrijving": "Thorax tussen blauwe lasers"
+    },
+    {
+      "foto": "/img/hall-lights-640.webp",
+      "beschrijving": "Feestzaal met moving heads en lichtshow"
+    }
+  ]
+}

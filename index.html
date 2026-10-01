@@ -1,10 +1,14 @@
+---
+# Template: content comes from _data/*.json (edited via /admin)
+---
 <!doctype html>
 <html lang="nl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>DJ Thorax — DJ voor fuiven, events & privéfeesten</title>
-<meta name="description" content="DJ Thorax: jonge all-round DJ uit West-Vlaanderen. Van tijdloze klassiekers tot rave-energie. Boek voor fuiven, events, bedrijfsfeesten en trouwfeesten — licht & geluid op maat mogelijk.">
+{% assign g = site.data.algemeen %}{% assign tel = g.telefoon | remove: " " | remove: "." | remove: "/" %}
+<meta name="description" content="{{ g.seo_beschrijving | escape }}">
 <meta name="theme-color" content="#050409">
 <link rel="icon" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -19,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MusicGroup","name":"DJ Thorax","genre":["Dance","House","Party classics"],"url":"https://www.djthorax.com/","image":"https://www.djthorax.com/img/logo-og.jpg","email":"thortack4@gmail.com","telephone":"+32467005708","member":{"@type":"Person","name":"Thor Tack"},"sameAs":["https://www.instagram.com/dj_thorax/","https://www.facebook.com/thor.tack/","https://soundcloud.com/thor-tack-123430728"]}
+{"@context":"https://schema.org","@type":"MusicGroup","name":"DJ Thorax","genre":["Dance","House","Party classics"],"url":"https://www.djthorax.com/","image":"https://www.djthorax.com/img/logo-og.jpg","email":{{ g.email | jsonify }},"telephone":{{ tel | jsonify }},"member":{"@type":"Person","name":"Thor Tack"},"sameAs":[{{ g.instagram | jsonify }},{{ g.facebook | jsonify }},{{ g.soundcloud | jsonify }}]}
 </script>
 <style>
 :root{
@@ -43,6 +47,8 @@ h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.05;letter-spacing
 h2{font-size:clamp(34px,5.4vw,60px);text-transform:uppercase;margin:16px 0 18px}
 h3{font-size:22px}
 .lead{color:var(--muted);font-size:clamp(16px,1.6vw,18px);max-width:620px}
+.lead p+p,.md p+p,details p+p{margin-top:.8em}
+.lead a,.md a{color:var(--volt2);text-decoration:underline}
 .hl{color:var(--volt2);text-shadow:0 0 24px var(--glow)}
 
 /* buttons */
@@ -165,8 +171,9 @@ h3{font-size:22px}
 .gallery button{border:0;padding:0;background:#111;border-radius:12px;overflow:hidden;cursor:zoom-in;position:relative}
 .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .3s;filter:saturate(.9)}
 .gallery button:hover img{transform:scale(1.05);filter:saturate(1.1)}
-.g1{grid-column:span 4;grid-row:span 3}.g2{grid-column:span 5;grid-row:span 2}.g3{grid-column:span 3;grid-row:span 2}
-.g4{grid-column:span 3;grid-row:span 2}.g5{grid-column:span 5;grid-row:span 2}.g6{grid-column:span 4;grid-row:span 1}
+.gallery{grid-auto-flow:dense}
+.gallery button:nth-child(6n+1){grid-column:span 4;grid-row:span 3}.gallery button:nth-child(6n+2){grid-column:span 5;grid-row:span 2}.gallery button:nth-child(6n+3){grid-column:span 3;grid-row:span 2}
+.gallery button:nth-child(6n+4){grid-column:span 3;grid-row:span 2}.gallery button:nth-child(6n+5){grid-column:span 5;grid-row:span 2}.gallery button:nth-child(6n){grid-column:span 4;grid-row:span 1}
 @media (max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}.gallery button{grid-column:span 1!important;grid-row:span 1!important}.gallery button:first-child{grid-column:span 2!important;grid-row:span 2!important}}
 .lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:none;place-items:center;padding:20px}
 .lightbox.open{display:grid}
@@ -354,9 +361,9 @@ footer p{font-size:13.5px;color:var(--dim)}
   <div class="flash" id="flash"></div>
   <div class="wrap">
     <div class="hero-copy">
-      <span class="eyebrow">DJ · West-Vlaanderen · België</span>
+      <span class="eyebrow">{{ g.ondertitel | escape }}</span>
       <img class="hero-mark" src="img/thorax-wordmark.png" alt="Thorax" width="738" height="200">
-      <h1>Good music isn’t just heard — <b>it’s felt.</b></h1>
+      <h1>{% assign tp = g.slogan | escape | split: "*" %}{% for p in tp %}{% assign m = forloop.index0 | modulo: 2 %}{% if m == 1 %}<b>{{ p }}</b>{% else %}{{ p }}{% endif %}{% endfor %}</h1>
       <div class="hero-cta">
         <a href="#boeken" class="btn btn-volt">Vraag een offerte <svg><use href="#i-arrow"/></svg></a>
         <a href="#mixes" class="btn btn-ghost"><svg><use href="#i-sc"/></svg> Beluister mixes</a>
@@ -373,23 +380,23 @@ footer p{font-size:13.5px;color:var(--dim)}
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+{% assign rf = site.data.referenties %}<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee">{% for i in (1..2) %}{% for e in rf.events %}<span>{{ e.naam | split: " — " | first | escape }}</span>{% endfor %}{% endfor %}</div></div>
 
 <!-- OVER -->
+{% assign o = site.data.over %}
 <section id="over">
   <div class="wrap about-grid">
     <div class="about-photos reveal">
-      <img src="img/truss-640.webp" srcset="img/truss-640.webp 640w, img/truss-1200.webp 1200w, img/truss-1365.webp 1365w" sizes="(max-width:900px) 80vw, 460px" width="1365" height="1832" alt="Thorax draait onder een lichttruss" loading="lazy">
-      <img src="img/red-shirt-516.webp" srcset="img/red-shirt-516.webp 516w" sizes="300px" width="516" height="622" alt="Thorax met koptelefoon achter de decks" loading="lazy">
+      {% assign r = site.data.responsive[o.foto_groot.foto] %}<img src="{{ o.foto_groot.foto }}"{% if r %} srcset="{{ r.srcset }}" sizes="(max-width:900px) 80vw, 460px" width="{{ r.w }}" height="{{ r.h }}"{% endif %} alt="{{ o.foto_groot.beschrijving | escape }}" loading="lazy">
+      {% assign r = site.data.responsive[o.foto_klein.foto] %}<img src="{{ o.foto_klein.foto }}"{% if r %} srcset="{{ r.srcset }}" sizes="300px" width="{{ r.w }}" height="{{ r.h }}"{% endif %} alt="{{ o.foto_klein.beschrijving | escape }}" loading="lazy">
     </div>
     <div class="reveal">
       <span class="eyebrow">Over Thorax</span>
-      <h2>Van klassiekers<br>tot <span class="hl">moderne beats</span></h2>
-      <p class="lead">Thorax is een jonge, groeiende all-round DJ die het podium bestormt. Een set zit vol variatie: van tijdloze klassiekers tot moderne beats, van meezingers tot pure rave-energie. Voor elke generatie en stemming is er iets.</p>
+      <h2>{% assign tp = o.titel | escape | newline_to_br | split: "*" %}{% for p in tp %}{% assign m = forloop.index0 | modulo: 2 %}{% if m == 1 %}<span class="hl">{{ p }}</span>{% else %}{{ p }}{% endif %}{% endfor %}</h2>
+      <div class="lead">{{ o.tekst | markdownify }}</div>
       <div class="pillars">
-        <div class="pillar"><i><svg><use href="#i-music"/></svg></i><div><b>Lezen van het publiek</b><p>Geen vaste playlist: de set groeit mee met de zaal, van aperitief tot afsluiter.</p></div></div>
-        <div class="pillar"><i><svg><use href="#i-users"/></svg></i><div><b>Elk soort feest</b><p>Fuiven, festivals, jeugdbewegingen, bedrijfsfeesten, verjaardagen en trouwfeesten.</p></div></div>
-        <div class="pillar"><i><svg><use href="#i-doc"/></svg></i><div><b>Zorgeloos geregeld</b><p>Offerte op maat, facturatie mogelijk en een geldige DJ-licentie (Unisono).</p></div></div>
+        {% assign icons = "i-music,i-users,i-doc" | split: "," %}{% for pt in o.punten %}{% assign k = forloop.index0 | modulo: 3 %}<div class="pillar"><i><svg><use href="#{{ icons[k] }}"/></svg></i><div><b>{{ pt.titel | escape }}</b><p>{{ pt.tekst | escape }}</p></div></div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -401,48 +408,43 @@ footer p{font-size:13.5px;color:var(--dim)}
     <div class="ref-head reveal">
       <div>
         <span class="eyebrow">Referenties</span>
-        <h2>Hier ging het<br>dak <span class="hl">eraf</span></h2>
-        <p class="lead">Een greep uit de events waar Thorax al draaide.</p>
+        <h2>{% assign tp = rf.titel | escape | newline_to_br | split: "*" %}{% for p in tp %}{% assign m = forloop.index0 | modulo: 2 %}{% if m == 1 %}<span class="hl">{{ p }}</span>{% else %}{{ p }}{% endif %}{% endfor %}</h2>
+        <div class="lead">{{ rf.intro | markdownify }}</div>
       </div>
       <div class="chips" id="chips" role="group" aria-label="Filter op gemeente"></div>
     </div>
-    <div class="refs" id="refs"></div>
-    <div class="private reveal"><svg width="22" height="22" style="color:var(--volt2);flex:none"><use href="#i-bolt"/></svg><p>Daarnaast ook <b>privéfeesten</b> zoals personeelsfeesten, verjaardagsfeesten en trouwfeesten.</p></div>
+    <div class="refs" id="refs">{% for e in rf.events %}
+      <div class="ref" data-town="{{ e.gemeente | escape }}"><div><b>{{ e.naam | escape }}</b><span>{{ e.postcode }} {{ e.gemeente | escape }}</span></div>{% if e.keer > 1 %}<em>{{ e.keer }}×</em>{% endif %}</div>{% endfor %}
+    </div>
+    {% if rf.extra != blank %}<div class="private reveal"><svg width="22" height="22" style="color:var(--volt2);flex:none"><use href="#i-bolt"/></svg><div>{{ rf.extra | markdownify }}</div></div>{% endif %}
 
-    <div class="gallery reveal" id="gallery">
-      <button class="g1"><img src="img/purple-decks-640.webp" srcset="img/purple-decks-640.webp 640w, img/purple-decks-1200.webp 1200w, img/purple-decks-1527.webp 1527w" sizes="(max-width:760px) 100vw, 40vw" width="1527" height="2048" data-full="img/purple-decks-1527.webp" alt="Thorax in paars licht achter Pioneer-decks" loading="lazy"></button>
-      <button class="g2"><img src="img/crowd-bw-640.webp" srcset="img/crowd-bw-640.webp 640w, img/crowd-bw-1200.webp 1200w, img/crowd-bw-1920.webp 1920w" sizes="(max-width:760px) 100vw, 40vw" width="1920" height="1280" data-full="img/crowd-bw-1920.webp" alt="Volle dansvloer op een bal" loading="lazy"></button>
-      <button class="g3"><img src="img/crowd-back-640.webp" srcset="img/crowd-back-640.webp 640w, img/crowd-back-1090.webp 1090w" sizes="(max-width:760px) 100vw, 40vw" width="1090" height="1355" data-full="img/crowd-back-1090.webp" alt="Thorax van achteren, met zicht op het publiek" loading="lazy"></button>
-      <button class="g4"><img src="img/outdoor-768.webp" srcset="img/outdoor-768.webp 768w" sizes="(max-width:760px) 100vw, 40vw" width="768" height="927" data-full="img/outdoor-768.webp" alt="Thorax op een buitenpodium" loading="lazy"></button>
-      <button class="g5"><img src="img/couleur-lasers-640.webp" srcset="img/couleur-lasers-640.webp 640w, img/couleur-lasers-1200.webp 1200w, img/couleur-lasers-1920.webp 1920w" sizes="(max-width:760px) 100vw, 40vw" width="1920" height="1280" data-full="img/couleur-lasers-1920.webp" alt="Thorax tussen blauwe lasers" loading="lazy"></button>
-      <button class="g6"><img src="img/hall-lights-640.webp" srcset="img/hall-lights-640.webp 640w, img/hall-lights-1200.webp 1200w, img/hall-lights-1920.webp 1920w" sizes="(max-width:760px) 100vw, 40vw" width="1920" height="1440" data-full="img/hall-lights-1920.webp" alt="Feestzaal met moving heads en lichtshow" loading="lazy"></button>
+    <div class="gallery reveal" id="gallery">{% for f in site.data.galerij.fotos %}
+      <button>{% assign r = site.data.responsive[f.foto] %}<img src="{{ f.foto }}"{% if r %} srcset="{{ r.srcset }}" sizes="(max-width:760px) 100vw, 40vw" width="{{ r.w }}" height="{{ r.h }}"{% endif %} alt="{{ f.beschrijving | escape }}" data-full="{% if r %}{{ r.groot }}{% else %}{{ f.foto }}{% endif %}" loading="lazy"></button>{% endfor %}
     </div>
   </div>
 </section>
 
 <!-- MIXES -->
+{% assign mx = site.data.mixes %}
 <section id="mixes" class="mixes">
   <div class="wrap">
     <div class="reveal">
       <span class="eyebrow">Mixes</span>
-      <h2>Druk op <span class="hl">play</span></h2>
-      <p class="lead">Beluister de mixtapes op SoundCloud, of laat een mix maken die volledig op jouw event is afgestemd.</p>
+      <h2>{% assign tp = mx.titel | escape | newline_to_br | split: "*" %}{% for p in tp %}{% assign m = forloop.index0 | modulo: 2 %}{% if m == 1 %}<span class="hl">{{ p }}</span>{% else %}{{ p }}{% endif %}{% endfor %}</h2>
+      <div class="lead">{{ mx.intro | markdownify }}</div>
     </div>
     <div class="mix-grid">
       <div class="panel sc reveal">
-        <div class="sc-top"><b>Mixes op SoundCloud</b><a href="https://soundcloud.com/thor-tack-123430728" target="_blank" rel="noopener">Open in SoundCloud <svg width="14" height="14"><use href="#i-arrow"/></svg></a></div>
+        <div class="sc-top"><b>Mixes op SoundCloud</b><a href="{{ g.soundcloud }}" target="_blank" rel="noopener">Open in SoundCloud <svg width="14" height="14"><use href="#i-arrow"/></svg></a></div>
         <iframe title="SoundCloud mixes van Thorax" loading="lazy" allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/thor-tack-123430728&color=%238b6cff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"></iframe>
+          src="https://w.soundcloud.com/player/?url={{ g.soundcloud | url_encode }}&color=%238b6cff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"></iframe>
       </div>
       <div class="panel reveal">
         <span class="eyebrow">Custom mixes</span>
-        <h3 style="margin-top:14px">Een mix die klopt van begin tot einde</h3>
-        <p>Geen losse playlist, maar een zorgvuldig opgebouwde set met energie en vloeiende overgangen — afgestemd op jouw doel, publiek en vibe. Ideaal voor een opwarmer, bedrijfsvideo, sportevent of je eigen feest.</p>
-        <ol class="steps">
-          <li>Jij deelt je doel, doelgroep en gewenste vibe</li>
-          <li>Ik stel de juiste flow samen</li>
-          <li>Je ontvangt de eerste versie</li>
-          <li>Feedback → final version</li>
+        <h3 style="margin-top:14px">{{ mx.custom_titel | escape }}</h3>
+        <div class="md">{{ mx.custom_tekst | markdownify }}</div>
+        <ol class="steps">{% for st in mx.stappen %}
+          <li>{{ st | escape }}</li>{% endfor %}
         </ol>
         <a href="#boeken" class="btn btn-volt" data-prefill="Custom mix">Vraag een custom mix aan <svg><use href="#i-arrow"/></svg></a>
       </div>
@@ -451,29 +453,23 @@ footer p{font-size:13.5px;color:var(--dim)}
 </section>
 
 <!-- LICHT & GELUID -->
+{% assign lg = site.data.lichtgeluid %}
 <section id="licht-geluid">
   <div class="wrap ls-grid">
     <div class="reveal">
       <span class="eyebrow">Licht &amp; Geluid</span>
-      <h2>Eén aanspreekpunt,<br><span class="hl">volledige show</span></h2>
-      <p class="lead">Niet enkel op zoek naar een DJ, maar ook naar licht &amp; geluid? Laat het weten en er wordt een pakket op maat gemaakt. Samen met de verhuurder maken we er een geslaagd feest van — of het nu een verjaardag, personeelsfeest of fuif is.</p>
-      <ul class="checks">
-        <li><span><b>Pakket op maat</b> — afgestemd op zaal, publiek en budget</span></li>
-        <li><span><b>Alles via Thorax</b> — één contact, één planning</span></li>
-        <li><span><b>Effecten mogelijk</b> — moving heads, lasers, sparkulars…</span></li>
+      <h2>{% assign tp = lg.titel | escape | newline_to_br | split: "*" %}{% for p in tp %}{% assign m = forloop.index0 | modulo: 2 %}{% if m == 1 %}<span class="hl">{{ p }}</span>{% else %}{{ p }}{% endif %}{% endfor %}</h2>
+      <div class="lead">{{ lg.tekst | markdownify }}</div>
+      <ul class="checks">{% for v in lg.voordelen %}
+        <li><span><b>{{ v.titel | escape }}</b>{% if v.tekst != blank %} — {{ v.tekst | escape }}{% endif %}</span></li>{% endfor %}
       </ul>
-      <p style="margin-top:30px;font-size:14px;color:var(--dim)">Samenwerkingen met verhuurders</p>
-      <div class="partners">
-        <div class="partner main"><small>Vaste partner</small>VisionSound</div>
-        <div class="partner"><small>Ook met</small>Dekasound</div>
-        <div class="partner"><small>Ook met</small>Fx Projects</div>
-      </div>
+      {% if lg.partners.size > 0 %}<p style="margin-top:30px;font-size:14px;color:var(--dim)">Samenwerkingen met verhuurders</p>
+      <div class="partners">{% for pa in lg.partners %}
+        <div class="partner{% if pa.uitgelicht %} main{% endif %}">{% if pa.label != blank %}<small>{{ pa.label | escape }}</small>{% endif %}{{ pa.naam | escape }}</div>{% endfor %}
+      </div>{% endif %}
     </div>
-    <div class="ls-photos reveal">
-      <img src="img/sparkulars-640.webp" srcset="img/sparkulars-640.webp 640w, img/sparkulars-1200.webp 1200w, img/sparkulars-1536.webp 1536w" sizes="(max-width:900px) 50vw, 320px" width="1536" height="2048" alt="Twee sparkulars in actie" loading="lazy">
-      <img src="img/moving-heads-632.webp" srcset="img/moving-heads-632.webp 632w" sizes="(max-width:900px) 50vw, 320px" width="632" height="360" alt="Vier moving heads in paars licht" loading="lazy">
-      <img src="img/decks-328.webp" srcset="img/decks-328.webp 328w" sizes="(max-width:900px) 50vw, 320px" width="328" height="638" alt="Pioneer DJ-setup" loading="lazy">
-      <img src="img/hall-lights-640.webp" srcset="img/hall-lights-640.webp 640w, img/hall-lights-1200.webp 1200w, img/hall-lights-1920.webp 1920w" sizes="(max-width:900px) 100vw, 640px" width="1920" height="1440" alt="Feestzaal met lichtshow" loading="lazy">
+    <div class="ls-photos reveal">{% for f in lg.fotos %}{% if forloop.index == 4 %}{% assign sz = "(max-width:900px) 100vw, 640px" %}{% else %}{% assign sz = "(max-width:900px) 50vw, 320px" %}{% endif %}
+      {% assign r = site.data.responsive[f.foto] %}<img src="{{ f.foto }}"{% if r %} srcset="{{ r.srcset }}" sizes="{{ sz }}" width="{{ r.w }}" height="{{ r.h }}"{% endif %} alt="{{ f.beschrijving | escape }}" loading="lazy">{% endfor %}
     </div>
   </div>
 </section>
@@ -483,8 +479,8 @@ footer p{font-size:13.5px;color:var(--dim)}
   <div class="wrap">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow">Boeken</span>
-      <h2>Boek <span class="hl">Thorax</span></h2>
-      <p class="lead" style="margin:0 auto">Elk feest is anders, dus je krijgt een vrijblijvende offerte op maat. Vul het formulier in en je hoort zo snel mogelijk van me.</p>
+      {% assign b = site.data.boeken %}<h2>{% assign tp = b.titel | escape | newline_to_br | split: "*" %}{% for p in tp %}{% assign m = forloop.index0 | modulo: 2 %}{% if m == 1 %}<span class="hl">{{ p }}</span>{% else %}{{ p }}{% endif %}{% endfor %}</h2>
+      <div class="lead" style="margin:0 auto">{{ b.intro | markdownify }}</div>
     </div>
 
     <div class="book-grid">
@@ -553,23 +549,23 @@ footer p{font-size:13.5px;color:var(--dim)}
         <div class="done" id="done" role="status">
           <svg class="bolt"><use href="#i-bolt"/></svg>
           <h3>Aanvraag verstuurd</h3>
-          <p>Bedankt! Je ontvangt zo snel mogelijk een vrijblijvende offerte. Dringend? Bel of stuur een bericht naar <a href="tel:+32467005708" style="color:#fff">+32 467 00 57 08</a>.</p>
+          <p>Bedankt! Je ontvangt zo snel mogelijk een vrijblijvende offerte. Dringend? Bel of stuur een bericht naar <a href="tel:{{ tel }}" style="color:#fff">{{ g.telefoon | escape }}</a>.</p>
         </div>
       </form>
 
       <aside class="contact reveal">
-        <a class="c-item" href="tel:+32467005708"><i><svg><use href="#i-phone"/></svg></i><div><small>Bellen</small><b>+32 467 00 57 08</b></div></a>
-        <a class="c-item" href="https://wa.me/32467005708" target="_blank" rel="noopener"><i><svg><use href="#i-wa"/></svg></i><div><small>WhatsApp</small><b>Stuur een bericht</b></div></a>
-        <a class="c-item" href="mailto:thortack4@gmail.com?subject=Boeking%20DJ%20Thorax"><i><svg><use href="#i-mail"/></svg></i><div><small>E-mail</small><b>thortack4@gmail.com</b></div></a>
+        <a class="c-item" href="tel:{{ tel }}"><i><svg><use href="#i-phone"/></svg></i><div><small>Bellen</small><b>{{ g.telefoon | escape }}</b></div></a>
+        <a class="c-item" href="https://wa.me/{{ tel | remove: "+" }}" target="_blank" rel="noopener"><i><svg><use href="#i-wa"/></svg></i><div><small>WhatsApp</small><b>Stuur een bericht</b></div></a>
+        <a class="c-item" href="mailto:{{ g.email }}?subject=Boeking%20DJ%20Thorax"><i><svg><use href="#i-mail"/></svg></i><div><small>E-mail</small><b>{{ g.email | escape }}</b></div></a>
         <div class="badges">
           <div><span>DJ-licentie (Unisono)</span><b class="ok">✓ In orde</b></div>
           <div><span>Facturatie</span><b class="ok">✓ Mogelijk</b></div>
-          <div><span>BTW-nummer</span><b>BE1031.174.534</b></div>
+          <div><span>BTW-nummer</span><b>{{ g.btw | escape }}</b></div>
         </div>
         <div class="socials" style="justify-content:flex-start;margin-top:4px">
-          <a href="https://www.instagram.com/dj_thorax/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
-          <a href="https://www.facebook.com/thor.tack/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
-          <a href="https://soundcloud.com/thor-tack-123430728" target="_blank" rel="noopener" aria-label="SoundCloud"><svg><use href="#i-sc"/></svg></a>
+          <a href="{{ g.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="{{ g.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+          <a href="{{ g.soundcloud }}" target="_blank" rel="noopener" aria-label="SoundCloud"><svg><use href="#i-sc"/></svg></a>
         </div>
       </aside>
     </div>
@@ -577,53 +573,35 @@ footer p{font-size:13.5px;color:var(--dim)}
 </section>
 
 <!-- FAQ -->
+{% assign fq = site.data.faq %}
 <section id="faq">
   <div class="wrap faq-grid">
     <div class="reveal">
       <span class="eyebrow">FAQ</span>
-      <h2>Veelgestelde<br><span class="hl">vragen</span></h2>
-      <p class="lead">Staat je vraag er niet tussen? Stuur gerust een berichtje.</p>
-      <img src="img/couleur-lasers-640.webp" srcset="img/couleur-lasers-640.webp 640w, img/couleur-lasers-1200.webp 1200w, img/couleur-lasers-1920.webp 1920w" sizes="(max-width:900px) 1px, 440px" width="1920" height="1280" alt="" loading="lazy">
+      <h2>{% assign tp = fq.titel | escape | newline_to_br | split: "*" %}{% for p in tp %}{% assign m = forloop.index0 | modulo: 2 %}{% if m == 1 %}<span class="hl">{{ p }}</span>{% else %}{{ p }}{% endif %}{% endfor %}</h2>
+      <div class="lead">{{ fq.intro | markdownify }}</div>
+      {% if fq.foto != blank %}{% assign r = site.data.responsive[fq.foto] %}<img src="{{ fq.foto }}"{% if r %} srcset="{{ r.srcset }}" sizes="(max-width:900px) 1px, 440px" width="{{ r.w }}" height="{{ r.h }}"{% endif %} alt="" loading="lazy">{% endif %}
     </div>
-    <div class="reveal">
-      <details open>
-        <summary>Van waar komt de artiestennaam Thorax?</summary>
-        <p>Thorax is een samensmelting van mijn eigen naam, <b>Thor</b>, en de DJ-naam van mijn vader, <b>Fax</b>. Het symboliseert niet alleen mijn eigen muzikale identiteit, maar ook de invloed van mijn vader op mijn carrière.</p>
-      </details>
-      <details>
-        <summary>Wat voor muziek draai je?</summary>
-        <p>Een set van Thorax zit vol variatie: van tijdloze klassiekers tot moderne beats, van meezingers tot pure rave-energie. Voor elke generatie en stemming is er iets.</p>
-      </details>
-      <details>
-        <summary>Hoe kan ik je boeken en wat kost het?</summary>
-        <p>Vul het <a href="#boeken">boekingsformulier</a> in of neem direct contact op. Omdat elk feest anders is, werk ik met offertes op maat. Na je aanvraag ontvang je zo snel mogelijk een vrijblijvende offerte.</p>
-      </details>
-      <details>
-        <summary>Voor welke soorten feesten kan ik je boeken?</summary>
-        <p>Van privéfeesten tot grote publieke evenementen en fuiven. Twijfel je of mijn stijl bij jouw event past? Neem contact op of bekijk de <a href="#referenties">referenties</a> om te zien waar ik al gedraaid heb.</p>
-      </details>
-      <details>
-        <summary>Breng je zelf materiaal mee?</summary>
-        <p>Is er geen DJ-controller op locatie, dan voorzie ik die zelf — geef dat gewoon aan in het formulier. Heb je ook licht &amp; geluid nodig, dan stel ik samen met een verhuurder een <a href="#licht-geluid">pakket op maat</a> samen.</p>
-      </details>
-      <details>
-        <summary>Kan ik een factuur krijgen?</summary>
-        <p>Ja. Facturatie is mogelijk (BTW BE1031.174.534) en ik beschik over een geldige DJ-licentie via Unisono.</p>
-      </details>
+    <div class="reveal">{% for q in fq.vragen %}
+      <details{% if forloop.first %} open{% endif %}>
+        <summary>{{ q.vraag | escape }}</summary>
+        {{ q.antwoord | markdownify }}
+      </details>{% endfor %}
     </div>
   </div>
 </section>
 
 <!-- LOGO -->
+{% assign lo = site.data.logo %}
 <section id="logo" style="padding-top:40px">
   <div class="wrap">
     <div class="press reveal">
       <img src="img/logo-640.webp" srcset="img/logo-640.webp 640w, img/logo-1200.webp 1200w, img/logo-1600.webp 1600w" sizes="(max-width:800px) 100vw, 590px" width="1600" height="1600" alt="Thorax-logo met bliksem" loading="lazy">
       <div class="press-body">
         <span class="eyebrow">Logo &amp; persmateriaal</span>
-        <h2 style="font-size:clamp(30px,4vw,46px)">Zet Thorax<br>op je <span class="hl">affiche</span></h2>
-        <p class="lead">Organiseer je een event met Thorax in de line-up? Download het logo in hoge resolutie voor je affiche, socials of scherm.</p>
-        <blockquote>De robuuste en gedurfde letters geven perfect de energieke persoonlijkheid van Thorax weer. De bliksemschicht symboliseert de energie die hij aan elk optreden geeft.<cite>— Studio Noedel, ontwerper van het logo</cite></blockquote>
+        <h2 style="font-size:clamp(30px,4vw,46px)">{% assign tp = lo.titel | escape | newline_to_br | split: "*" %}{% for p in tp %}{% assign m = forloop.index0 | modulo: 2 %}{% if m == 1 %}<span class="hl">{{ p }}</span>{% else %}{{ p }}{% endif %}{% endfor %}</h2>
+        <div class="lead">{{ lo.tekst | markdownify }}</div>
+        {% if lo.quote != blank %}<blockquote>{{ lo.quote | escape }}{% if lo.quote_bron != blank %}<cite>— {{ lo.quote_bron | escape }}</cite>{% endif %}</blockquote>{% endif %}
         <div class="press-cta">
           <a class="btn btn-volt" href="img/thorax-logo.png" download="Thorax-logo.png"><svg><use href="#i-dl"/></svg> Download logo (PNG)</a>
           <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1Pm3MjDRCwSjRm3CK7XjZn7PxqT9fgWbk" target="_blank" rel="noopener">Alle bestanden</a>
@@ -635,8 +613,8 @@ footer p{font-size:13.5px;color:var(--dim)}
 
 <section class="final">
   <div class="wrap reveal">
-    <span class="eyebrow">Klaar om te knallen?</span>
-    <h2>Maak van je feest een <span class="hl">storm</span></h2>
+    <span class="eyebrow">{{ g.afsluiter_label | escape }}</span>
+    <h2>{% assign tp = g.afsluiter_titel | escape | newline_to_br | split: "*" %}{% for p in tp %}{% assign m = forloop.index0 | modulo: 2 %}{% if m == 1 %}<span class="hl">{{ p }}</span>{% else %}{{ p }}{% endif %}{% endfor %}</h2>
     <a href="#boeken" class="btn btn-volt">Vraag een offerte <svg><use href="#i-arrow"/></svg></a>
   </div>
 </section>
@@ -644,12 +622,12 @@ footer p{font-size:13.5px;color:var(--dim)}
 
 <footer>
   <div class="wrap">
-    <p>© <span id="yr"></span> DJ Thorax · Thor Tack · BTW BE1031.174.534</p>
-    <p style="font-style:italic">Good music isn’t just heard — it’s felt.</p>
+    <p>© <span id="yr"></span> DJ Thorax · Thor Tack · BTW {{ g.btw | escape }}</p>
+    <p style="font-style:italic">{{ g.slogan | remove: "*" | escape }}</p>
     <div class="socials">
-      <a href="https://www.instagram.com/dj_thorax/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
-      <a href="https://www.facebook.com/thor.tack/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
-      <a href="https://soundcloud.com/thor-tack-123430728" target="_blank" rel="noopener" aria-label="SoundCloud"><svg><use href="#i-sc"/></svg></a>
+          <a href="{{ g.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="{{ g.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+          <a href="{{ g.soundcloud }}" target="_blank" rel="noopener" aria-label="SoundCloud"><svg><use href="#i-sc"/></svg></a>
     </div>
   </div>
 </footer>
@@ -672,32 +650,6 @@ footer p{font-size:13.5px;color:var(--dim)}
 
 <script>
 /* ---------- data ---------- */
-const REFS = [
-  ["Beach Party","Ingelmunster",3],
-  ["Dance With The Duvel","Ingelmunster",3],
-  ["Laspidy","Lendelede",3],
-  ["Mandel's Midnight","Ingelmunster",2],
-  ["Chirouge","Ingelmunster",2],
-  ["Cityrun","Ingelmunster",2],
-  ["Kontrabasfeesten","Ingelmunster",2],
-  ["Thunderball","Izegem",2],
-  ["O'Douce — DJ-workshop gegeven","Nazareth-De Pinte",1],
-  ["100 Dagen — Lemonbar","Wetteren",1],
-  ["Party Instinct","Ledegem",1],
-  ["50 Dagen","Roeselare",1],
-  ["JOC","Dadizele",1],
-  ["Megafuif","Izegem",1],
-  ["Fat Asspi","Lendelede",1],
-  ["Bal — Sint-Gertrudiscollege","Wetteren",1],
-  ["Batjes","Izegem",1],
-  ["Zomerbar Chiro Jefri","Ingelmunster",1],
-  ["Mexican Night","Izegem",1],
-  ["Ripcup","Izegem",1],
-  ["Kickoff","Izegem",1],
-  ["Nacht van de Jeugdbeweging (JH Kontrabas)","Ingelmunster",1],
-];
-const POSTCODE = {"Ingelmunster":"8770","Lendelede":"8860","Izegem":"8870","Nazareth-De Pinte":"9810","Wetteren":"9230","Ledegem":"8880","Roeselare":"8800","Dadizele":"8890"};
-
 const FORM_OPTS = {
   "entry.967309014": ["Fuif","Festival","Verjaardag","Bruiloft","Zakelijk event"],
   "entry.583213514": ["0 - 100","100 - 300","300 - 1000","1000+"],
@@ -712,17 +664,12 @@ const $$ = (s, el=document) => [...el.querySelectorAll(s)];
 const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
 
-/* ---------- marquee ---------- */
-const names = REFS.map(r => `<span>${esc(r[0].split(" — ")[0])}</span>`).join("");
-$("#marquee").innerHTML = names + names;
-
-/* ---------- references ---------- */
-const towns = [...new Set(REFS.map(r => r[1]))];
-const byTown = towns.map(t => [t, REFS.filter(r => r[1] === t).length]).sort((a, b) => b[1] - a[1]);
+/* ---------- references (cards are rendered from _data/referenties.json) ---------- */
+const perTown = {};
+$$(".ref").forEach(r => perTown[r.dataset.town] = (perTown[r.dataset.town] || 0) + 1);
+const towns = Object.keys(perTown).sort((a, b) => perTown[b] - perTown[a]);
 $("#chips").innerHTML = `<button class="chip on" data-town="">Alle</button>` +
-  byTown.map(([t]) => `<button class="chip" data-town="${esc(t)}">${esc(t)}</button>`).join("");
-$("#refs").innerHTML = REFS.map(([n, t, c]) =>
-  `<div class="ref" data-town="${esc(t)}"><div><b>${esc(n)}</b><span>${POSTCODE[t]} ${esc(t)}</span></div>${c > 1 ? `<em>${c}×</em>` : ""}</div>`).join("");
+  towns.map(t => `<button class="chip" data-town="${esc(t)}">${esc(t)}</button>`).join("");
 $("#chips").addEventListener("click", e => {
   const b = e.target.closest(".chip"); if (!b) return;
   $$(".chip").forEach(c => c.classList.toggle("on", c === b));

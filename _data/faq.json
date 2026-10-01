@@ -1,0 +1,31 @@
+{
+  "titel": "Veelgestelde\n*vragen*",
+  "intro": "Staat je vraag er niet tussen? Stuur gerust een berichtje.",
+  "foto": "/img/couleur-lasers-640.webp",
+  "vragen": [
+    {
+      "vraag": "Van waar komt de artiestennaam Thorax?",
+      "antwoord": "Thorax is een samensmelting van mijn eigen naam, **Thor**, en de DJ-naam van mijn vader, **Fax**. Het symboliseert niet alleen mijn eigen muzikale identiteit, maar ook de invloed van mijn vader op mijn carrière."
+    },
+    {
+      "vraag": "Wat voor muziek draai je?",
+      "antwoord": "Een set van Thorax zit vol variatie: van tijdloze klassiekers tot moderne beats, van meezingers tot pure rave-energie. Voor elke generatie en stemming is er iets."
+    },
+    {
+      "vraag": "Hoe kan ik je boeken en wat kost het?",
+      "antwoord": "Vul het [boekingsformulier](#boeken) in of neem direct contact op. Omdat elk feest anders is, werk ik met offertes op maat. Na je aanvraag ontvang je zo snel mogelijk een vrijblijvende offerte."
+    },
+    {
+      "vraag": "Voor welke soorten feesten kan ik je boeken?",
+      "antwoord": "Van privéfeesten tot grote publieke evenementen en fuiven. Twijfel je of mijn stijl bij jouw event past? Neem contact op of bekijk de [referenties](#referenties) om te zien waar ik al gedraaid heb."
+    },
+    {
+      "vraag": "Breng je zelf materiaal mee?",
+      "antwoord": "Is er geen DJ-controller op locatie, dan voorzie ik die zelf — geef dat gewoon aan in het formulier. Heb je ook licht & geluid nodig, dan stel ik samen met een verhuurder een [pakket op maat](#licht-geluid) samen."
+    },
+    {
+      "vraag": "Kan ik een factuur krijgen?",
+      "antwoord": "Ja. Facturatie is mogelijk (BTW BE1031.174.534) en ik beschik over een geldige DJ-licentie via Unisono."
+    }
+  ]
+}

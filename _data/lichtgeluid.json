@@ -1,0 +1,53 @@
+{
+  "titel": "Eén aanspreekpunt,\n*volledige show*",
+  "tekst": "Niet enkel op zoek naar een DJ, maar ook naar licht & geluid? Laat het weten en er wordt een pakket op maat gemaakt. Samen met de verhuurder maken we er een geslaagd feest van — of het nu een verjaardag, personeelsfeest of fuif is.",
+  "voordelen": [
+    {
+      "titel": "Pakket op maat",
+      "tekst": "afgestemd op zaal, publiek en budget"
+    },
+    {
+      "titel": "Alles via Thorax",
+      "tekst": "één contact, één planning"
+    },
+    {
+      "titel": "Effecten mogelijk",
+      "tekst": "moving heads, lasers, sparkulars…"
+    }
+  ],
+  "partners": [
+    {
+      "naam": "VisionSound",
+      "label": "Vaste partner",
+      "uitgelicht": true
+    },
+    {
+      "naam": "Dekasound",
+      "label": "Ook met",
+      "uitgelicht": false
+    },
+    {
+      "naam": "Fx Projects",
+      "label": "Ook met",
+      "uitgelicht": false
+    }
+  ],
+  "fotos": [
+    {
+      "foto": "/img/sparkulars-640.webp",
+      "beschrijving": "Twee sparkulars in actie"
+    },
+    {
+      "foto": "/img/moving-heads-632.webp",
+      "beschrijving": "Vier moving heads in paars licht"
+    },
+    {
+      "foto": "/img/decks-328.webp",
+      "beschrijving": "Pioneer DJ-setup"
+    },
+    {
+      "foto": "/img/hall-lights-640.webp",
+      "beschrijving": "Feestzaal met lichtshow"
+    }
+  ]
+}
