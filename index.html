@@ -742,9 +742,9 @@ addEventListener("keydown", e => { if (e.key === "Escape" && modalOpen) closeVid
 const gImgs = $$("#gallery img"), lb = $("#lightbox"), lbImg = $("#lbImg");
 let cur = 0;
 const show = i => { cur = (i + gImgs.length) % gImgs.length; lbImg.src = gImgs[cur].dataset.full || gImgs[cur].currentSrc; lbImg.alt = gImgs[cur].alt; };
-gImgs.forEach((img, i) => img.parentElement.addEventListener("click", () => { show(i); lb.classList.add("open"); $(".lb-close").focus(); }));
+gImgs.forEach((img, i) => img.parentElement.addEventListener("click", () => { show(i); lb.classList.add("open"); $(".lb-close", lb).focus(); }));
 const closeLb = () => lb.classList.remove("open");
-$(".lb-close").onclick = closeLb;
+$(".lb-close", lb).onclick = closeLb;
 $(".lb-prev").onclick = () => show(cur - 1);
 $(".lb-next").onclick = () => show(cur + 1);
 lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
