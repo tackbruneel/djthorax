@@ -3,12 +3,6 @@
   "intro": "Een greep uit de events waar Thorax al draaide.",
   "events": [
     {
-      "naam": "50 Jaar JH Skalul",
-      "gemeente": "Lendelede",
-      "postcode": "8860",
-      "keer": 1
-    },
-    {
       "naam": "Beach Party",
       "gemeente": "Ingelmunster",
       "postcode": "8770",
@@ -21,16 +15,22 @@
       "keer": 3
     },
     {
-      "naam": "Laspidy",
+      "naam": "50 Jaar JH Skalul",
       "gemeente": "Lendelede",
       "postcode": "8860",
-      "keer": 3
+      "keer": 1
     },
     {
       "naam": "Mandel's Midnight",
       "gemeente": "Ingelmunster",
       "postcode": "8770",
       "keer": 2
+    },
+    {
+      "naam": "Laspidy",
+      "gemeente": "Lendelede",
+      "postcode": "8860",
+      "keer": 3
     },
     {
       "naam": "Chirouge",
@@ -48,7 +48,7 @@
       "naam": "Kontrabasfeesten",
       "gemeente": "Ingelmunster",
       "postcode": "8770",
-      "keer": 2
+      "keer": 3
     },
     {
       "naam": "Thunderball",
