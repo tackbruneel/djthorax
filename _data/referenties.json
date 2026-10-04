@@ -3,6 +3,12 @@
   "intro": "Een greep uit de events waar Thorax al draaide.",
   "events": [
     {
+      "naam": "50 Jaar JH Skalul",
+      "gemeente": "Lendelede",
+      "postcode": "8860",
+      "keer": 1
+    },
+    {
       "naam": "Beach Party",
       "gemeente": "Ingelmunster",
       "postcode": "8770",
