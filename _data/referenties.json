@@ -15,12 +15,6 @@
       "keer": 3
     },
     {
-      "naam": "50 Jaar JH Skalul",
-      "gemeente": "Lendelede",
-      "postcode": "8860",
-      "keer": 1
-    },
-    {
       "naam": "Mandel's Midnight",
       "gemeente": "Ingelmunster",
       "postcode": "8770",
@@ -39,22 +33,28 @@
       "keer": 2
     },
     {
-      "naam": "Cityrun",
-      "gemeente": "Ingelmunster",
-      "postcode": "8770",
-      "keer": 2
-    },
-    {
       "naam": "Kontrabasfeesten",
       "gemeente": "Ingelmunster",
       "postcode": "8770",
       "keer": 3
     },
     {
+      "naam": "Cityrun",
+      "gemeente": "Ingelmunster",
+      "postcode": "8770",
+      "keer": 2
+    },
+    {
       "naam": "Thunderball",
       "gemeente": "Izegem",
       "postcode": "8870",
       "keer": 2
+    },
+    {
+      "naam": "50 Jaar JH Skalul",
+      "gemeente": "Lendelede",
+      "postcode": "8860",
+      "keer": 1
     },
     {
       "naam": "O'Douce — DJ-workshop gegeven",
