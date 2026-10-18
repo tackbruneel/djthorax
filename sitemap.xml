@@ -1,0 +1,13 @@
+---
+# Built by GitHub Pages: lastmod = the moment of the latest build (every CMS save)
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.djthorax.com/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <image:image><image:loc>https://www.djthorax.com/img/logo-og.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.djthorax.com/img/hero-stage-1536.webp</image:loc></image:image>{% assign fotos = site.data.galerij.fotos | concat: site.data.lichtgeluid.fotos %}{% assign fotos = fotos | push: site.data.over.foto_groot | push: site.data.over.foto_klein | map: "foto" | uniq %}{% for f in fotos %}{% assign r = site.data.responsive[f] %}
+    <image:image><image:loc>https://www.djthorax.com{% if r %}{{ r.groot | xml_escape }}{% else %}{{ f | xml_escape }}{% endif %}</image:loc></image:image>{% endfor %}
+  </url>
+</urlset>
