@@ -1,0 +1,47 @@
+---
+# llms.txt: summary of the site for AI assistants (llmstxt.org). Built by GitHub Pages from _data, so CMS edits flow in.
+layout: null
+---
+{% assign g = site.data.algemeen %}{% assign towns = site.data.referenties.events | map: "gemeente" | uniq %}# DJ Thorax
+
+> {{ g.seo_beschrijving }}
+
+DJ Thorax is Thor Tack, een all-round DJ uit West-Vlaanderen (België). Boeken gaat via een vrijblijvende offerte op maat: er zijn geen vaste prijzen.
+
+## Over
+
+{{ site.data.over.tekst | strip_html | strip_newlines }}
+{% for p in site.data.over.punten %}
+- {{ p.titel }}: {{ p.tekst | strip_html | strip_newlines }}{% endfor %}
+
+## Regio
+
+Vooral West-Vlaanderen (regio Roeselare–Kortrijk), ook Oost-Vlaanderen. Gemeenten waar Thorax al draaide: {{ towns | join: ", " }}.
+
+## Referenties (selectie)
+{% for e in site.data.referenties.events %}
+- {{ e.naam }}, {{ e.gemeente }}{% if e.keer > 1 %} ({{ e.keer }}×){% endif %}{% endfor %}
+
+## Licht & geluid
+
+{{ site.data.lichtgeluid.tekst | strip_html | strip_newlines }} Partners: {{ site.data.lichtgeluid.partners | map: "naam" | join: ", " }}.
+
+## Veelgestelde vragen
+{% for q in site.data.faq.vragen %}
+### {{ q.vraag }}
+
+{{ q.antwoord | markdownify | strip_html | strip_newlines | strip | replace: "&amp;", "&" }}
+{% endfor %}
+## Contact en boeken
+
+- Boekingsformulier: https://www.djthorax.com/#boeken
+- Telefoon en WhatsApp: {{ g.telefoon }}
+- E-mail: {{ g.email }}
+- Btw-nummer: {{ g.btw }} · facturatie mogelijk · DJ-licentie via Unisono
+- Instagram: {{ g.instagram }}
+- SoundCloud (mixes): {{ g.soundcloud }}
+
+## Pagina's
+
+- [Startpagina](https://www.djthorax.com/): over, referenties, mixes, licht & geluid, boeken, FAQ, logo
+- [Logo en persmateriaal](https://www.djthorax.com/#logo)
