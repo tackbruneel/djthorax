@@ -182,3 +182,97 @@ collections:
           - { name: afsluiter_label, label: Slot – kleine tekst, widget: string }
           - { name: afsluiter_titel, label: Slot – titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*." }
           - { name: seo_beschrijving, label: Beschrijving voor Google, widget: text, hint: "Max. ±155 tekens. Dit zie je in de zoekresultaten." }
+
+  # English page (/en/): only the texts. Photos, events, partners and contact details come from the Dutch "Website" section.
+  - name: english
+    label: "Website (English)"
+    icon: translate
+    files:
+      - name: en_over
+        label: "About Thorax"
+        file: _data/en/over.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: tekst, label: Tekst, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - name: punten
+            label: Kaartjes
+            label_singular: Kaartje
+            widget: list
+            summary: "{{titel}}"
+            fields:
+              - { name: titel, label: Titel, widget: string }
+              - { name: tekst, label: Tekst, widget: text }
+
+      - name: en_referenties
+        label: "References (titel en tekst)"
+        file: _data/en/referenties.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: intro, label: Intro, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - { name: extra, label: Tekst onder de events, widget: markdown, buttons: [bold, italic, link], editor_components: [], required: false }
+
+      - name: en_mixes
+        label: Mixes
+        file: _data/en/mixes.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*." }
+          - { name: intro, label: Intro, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - { name: custom_titel, label: Titel custom mixes, widget: string }
+          - { name: custom_tekst, label: Tekst custom mixes, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - { name: stappen, label: Stappen, label_singular: Stap, widget: list, field: { name: stap, label: Stap, widget: string } }
+
+      - name: en_lichtgeluid
+        label: "Light & sound"
+        file: _data/en/lichtgeluid.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: tekst, label: Tekst, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - name: voordelen
+            label: Voordelen (met vinkje)
+            label_singular: Voordeel
+            widget: list
+            summary: "{{titel}}"
+            fields:
+              - { name: titel, label: Vetgedrukt, widget: string }
+              - { name: tekst, label: Uitleg, widget: string, required: false }
+
+      - name: en_faq
+        label: FAQ
+        file: _data/en/faq.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: intro, label: Intro, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - name: vragen
+            label: Vragen
+            label_singular: Vraag
+            widget: list
+            summary: "{{vraag}}"
+            fields:
+              - { name: vraag, label: Vraag, widget: string }
+              - { name: antwoord, label: Antwoord, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+
+      - name: en_boeken
+        label: Booking
+        file: _data/en/boeken.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*." }
+          - { name: intro, label: Intro boven het formulier, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+
+      - name: en_logo
+        label: "Logo & press kit"
+        file: _data/en/logo.json
+        fields:
+          - { name: titel, label: Titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*. Enter = nieuwe regel." }
+          - { name: tekst, label: Tekst, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - { name: quote, label: Citaat, widget: text, required: false }
+          - { name: quote_bron, label: "Van wie is het citaat?", widget: string, required: false }
+
+      - name: en_algemeen
+        label: General
+        file: _data/en/algemeen.json
+        fields:
+          - { name: ondertitel, label: Kleine tekst boven het logo, widget: string }
+          - { name: slogan, label: Slogan, widget: string, hint: "Het vetgedrukte deel tussen *sterretjes*." }
+          - { name: afsluiter_label, label: Slot – kleine tekst, widget: string }
+          - { name: afsluiter_titel, label: Slot – titel, widget: text, hint: "Zet het paarse deel tussen *sterretjes*." }
+          - { name: seo_beschrijving, label: Beschrijving voor Google, widget: text, hint: "Max. ±155 tekens. Dit zie je in de zoekresultaten." }
