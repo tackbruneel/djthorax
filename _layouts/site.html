@@ -253,9 +253,6 @@ h3{font-size:22px}
 .book{background:radial-gradient(70% 50% at 50% 0%,rgba(139,108,255,.16),transparent 70%)}
 .book-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;margin-top:44px;align-items:start}
 form.panel{padding:32px}
-.fs{border:0;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:30px}
-.fs legend{grid-column:1/-1;font:700 13px/1 var(--head);letter-spacing:.18em;text-transform:uppercase;color:var(--volt2);margin-bottom:18px;display:flex;align-items:center;gap:10px;width:100%}
-.fs legend::after{content:"";flex:1;height:1px;background:var(--line)}
 .field{display:grid;gap:7px;min-width:0}
 .field.full{grid-column:1/-1}
 .field label,.q{font-size:14px;font-weight:600;color:#ddd8ee}
@@ -271,7 +268,6 @@ form.panel{padding:32px}
 .opts label{position:relative}
 .opts input{position:absolute;opacity:0;inset:0;cursor:pointer}
 .opts span{display:inline-flex;align-items:center;min-height:42px;padding:9px 16px;border-radius:12px;border:1px solid var(--line);background:#0a0912;font-size:14.5px;color:var(--muted);cursor:pointer;transition:.15s;line-height:1.3}
-.opts input:checked+span{background:rgba(139,108,255,.18);border-color:var(--volt);color:#fff}
 .opts input:focus-visible+span{box-shadow:0 0 0 4px rgba(139,108,255,.3)}
 .spot-input{position:relative}
 .spot-input svg{position:absolute;left:15px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:#1ed760;pointer-events:none}
@@ -282,9 +278,6 @@ form.panel{padding:32px}
 .spot-embed iframe{display:block;width:100%;height:152px;border:0;border-radius:12px;margin-top:4px}
 .other{display:none;margin-top:8px}
 .other.show{display:block}
-.form-foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:24px}
-.form-foot p{font-size:13.5px;color:var(--dim);max-width:340px}
-.form-foot p a{color:var(--muted);text-decoration:underline}
 .err{color:#ff8a9a;font-size:14px;margin-top:14px;display:none}
 .err.show{display:block}
 .done{display:none;text-align:center;padding:60px 20px}
@@ -292,7 +285,40 @@ form.panel{padding:32px}
 .done .bolt{width:64px;height:64px;margin:0 auto 20px;color:var(--volt2);filter:drop-shadow(0 0 20px var(--volt))}
 .done h3{font-size:30px;text-transform:uppercase}
 .done p{color:var(--muted);margin:10px auto 0;max-width:420px}
-@media (max-width:640px){.fs{grid-template-columns:1fr}form.panel{padding:22px}}
+/* step form: one short question at a time; the bar jumps most after the first tap */
+.stappen-kop{display:grid;gap:9px;margin-bottom:26px}
+.stap-nu{font:700 12px/1 var(--head);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.voortgang{height:8px;border-radius:999px;background:#0a0912;border:1px solid var(--line);overflow:hidden}
+.voortgang span{display:block;height:100%;width:12%;background:#fff;border-radius:999px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.stap{border:0;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.stap:not(.actief){display:none}
+.stap legend{font:700 clamp(24px,3vw,32px)/1.1 var(--head);text-transform:uppercase;margin-bottom:20px;padding:0}
+.stap .full,.stap-knoppen,.privacy{grid-column:1/-1}
+.stap.actief{animation:stapIn .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes stapIn{from{opacity:0;transform:translateY(10px)}}
+.opts input:checked+span{background:transparent;border-color:#fff;color:#fff;font-weight:700}
+.opts label:hover span{border-color:rgba(255,255,255,.28)}
+.opts.groot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.opts.groot span{position:relative;display:flex;width:100%;min-height:72px;padding:12px 44px 12px 18px;font:600 17px/1.2 var(--head);letter-spacing:.02em;text-transform:uppercase}
+.opts.groot span::after{content:"";position:absolute;right:16px;top:50%;width:18px;height:18px;margin-top:-9px;border:2px solid var(--dim);border-radius:50%}
+.opts.groot input:checked+span::after{border-color:#fff;background:radial-gradient(circle,#fff 0 4px,transparent 5px)}
+.other label{display:block;margin:6px 0 7px}
+.stap-knoppen{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:6px}
+.stap-knoppen[hidden]{display:none}
+.stap-terug{min-height:48px;padding:0 10px;border:0;background:none;color:var(--muted);font:600 15px/1 var(--body);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.stap-terug:hover{color:#fff}
+.meer{border-top:1px solid var(--line);border-bottom:0}
+.meer summary{padding:14px 0;color:var(--muted);font:600 15px/1.35 var(--body)}
+.meer summary::after{width:30px;height:30px;font-size:19px;color:#fff}
+.meer[open] summary::after{background:transparent}
+.meer summary:hover{color:#fff}
+.meer-velden{display:grid;gap:16px;margin-top:14px}
+.privacy{font-size:13.5px;color:var(--dim)}
+.privacy a{color:var(--muted);text-decoration:underline}
+#gearField[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.voortgang span{transition:none}.stap.actief{animation:none}}
+@media (max-width:360px){.opts.groot span{padding-right:12px}.opts.groot span::after{display:none}}
+@media (max-width:640px){.stap{grid-template-columns:minmax(0,1fr)}form.panel{padding:22px}.opts.groot{grid-template-columns:repeat(2,minmax(0,1fr))}.opts.groot span{min-height:64px;padding:10px 32px 10px 12px;font-size:14px;letter-spacing:.01em}.opts.groot span::after{right:10px;width:16px;height:16px;margin-top:-8px}.stap-knoppen .btn{flex:1 1 100%}}
 
 .contact{display:grid;gap:12px;position:sticky;top:92px}
 .c-item{display:flex;gap:16px;align-items:center;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:border-color .2s,transform .2s}
@@ -536,40 +562,44 @@ footer p a:hover{color:var(--volt2)}
     <div class="book-grid">
       <form class="panel reveal" id="bookForm" novalidate>
         <div id="formBody">
-          <fieldset class="fs">
-            <legend>{{ t.fs_jij }}</legend>
-            <div class="field"><label for="f-fn">{{ t.f_fn }} <i>*</i></label><input id="f-fn" name="entry.1829174241" required autocomplete="given-name"></div>
-            <div class="field"><label for="f-ln">{{ t.f_ln }} <i>*</i></label><input id="f-ln" name="entry.1183264836" required autocomplete="family-name"></div>
-            <div class="field full"><label for="f-org">{{ t.f_org }}</label><input id="f-org" name="entry.177049678" autocomplete="organization" placeholder="{{ t.optioneel }}"></div>
-            <div class="field"><label for="f-mail">{{ t.f_mail }} <i>*</i></label><input id="f-mail" type="email" name="entry.1710891049" required autocomplete="email"></div>
-            <div class="field"><label for="f-tel">{{ t.f_tel }} <i>*</i></label><input id="f-tel" type="tel" name="entry.1713797247" required autocomplete="tel"></div>
+          <div class="stappen-kop">
+            <p class="stap-nu" id="stapNu" aria-live="polite">{{ t.stap }} 1 / 4</p>
+            <div class="voortgang" id="voortgang" role="progressbar" aria-label="{{ t.voortgang }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12"><span></span></div>
+          </div>
+
+          <fieldset class="stap actief">
+            <legend>{{ t.s1 }}</legend>
+            <div class="field full">
+              <div class="opts groot" data-name="entry.967309014" data-other="Andere"></div>
+              <div class="other" id="typeOtherBox">
+                <label class="q" for="f-type-other">{{ t.type_other }} <i>*</i></label>
+                <input id="f-type-other">
+              </div>
+            </div>
+            <div class="stap-knoppen" id="s1Knop" hidden><button class="btn btn-volt" type="button" data-volgende>{{ t.volgende }} <svg><use href="#i-arrow"/></svg></button></div>
           </fieldset>
 
-          <fieldset class="fs">
-            <legend>{{ t.fs_event }}</legend>
-            <div class="field full"><label for="f-ev">{{ t.f_ev }} <i>*</i></label><input id="f-ev" name="entry.912097730" required></div>
+          <fieldset class="stap">
+            <legend>{{ t.s2 }}</legend>
             <div class="field full"><label for="f-date">{{ t.f_date }} <i>*</i></label><input id="f-date" type="date" required></div>
             <div class="field"><label for="f-start">{{ t.f_start }} <i>*</i></label><select id="f-start" class="time" required><option value="">{{ t.kies_uur }}</option></select></div>
             <div class="field"><label for="f-end">{{ t.f_end }} <i>*</i></label><select id="f-end" class="time" required><option value="">{{ t.kies_uur }}</option></select></div>
             <div class="field full"><label for="f-loc">{{ t.f_loc }} <i>*</i></label><input id="f-loc" name="entry.1612804761" required autocomplete="street-address"></div>
-            <div class="field full" role="radiogroup" aria-labelledby="q-type">
-              <span class="q" id="q-type">{{ t.q_type }} <i>*</i></span>
-              <div class="opts" data-name="entry.967309014" data-other="Andere"></div>
-              <input class="other" id="f-type-other" placeholder="{{ t.type_other }}" style="background:#0a0912;border:1px solid var(--line);border-radius:12px;padding:14px 15px;width:100%">
-            </div>
             <div class="field full" role="radiogroup" aria-labelledby="q-size">
               <span class="q" id="q-size">{{ t.q_size }} <i>*</i></span>
               <div class="opts" data-name="entry.583213514"></div>
             </div>
+            <div class="field full"><label for="f-ev">{{ t.f_ev }}</label><input id="f-ev" placeholder="{{ t.f_ev_ph }}"></div>
+            <div class="stap-knoppen"><button class="btn btn-volt" type="button" data-volgende>{{ t.volgende }} <svg><use href="#i-arrow"/></svg></button><button class="stap-terug" type="button" data-vorige>{{ t.terug }}</button></div>
           </fieldset>
 
-          <fieldset class="fs">
-            <legend>{{ t.fs_tech }}</legend>
+          <fieldset class="stap">
+            <legend>{{ t.s3 }}</legend>
             <div class="field full" role="radiogroup" aria-labelledby="q-gear">
               <span class="q" id="q-gear">{{ t.q_gear }} <i>*</i></span>
               <div class="opts" data-name="entry.2040819063"></div>
             </div>
-            <div class="field full" id="gearField"><label for="f-gear">{{ t.f_gear }}</label><input id="f-gear" name="entry.759367685" placeholder="{{ t.f_gear_ph }}"></div>
+            <div class="field full" id="gearField" hidden><label for="f-gear">{{ t.f_gear }}</label><input id="f-gear" name="entry.759367685" placeholder="{{ t.f_gear_ph }}"></div>
             <div class="field full" role="radiogroup" aria-labelledby="q-ls">
               <span class="q" id="q-ls">{{ t.q_ls }} <i>*</i></span>
               <div class="opts" data-name="entry.1395671178"></div>
@@ -578,22 +608,34 @@ footer p a:hover{color:var(--volt2)}
               <span class="q" id="q-inv">{{ t.q_inv }} <i>*</i></span>
               <div class="opts" data-name="entry.535455282"></div>
             </div>
-            <div class="field full">
-              <label for="f-spotify">{{ t.f_spotify }}</label>
-              <div class="spot-input">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.5 17.3a.75.75 0 0 1-1 .25c-2.85-1.74-6.43-2.13-10.66-1.17a.75.75 0 1 1-.33-1.46c4.62-1.06 8.6-.6 11.74 1.33.36.21.47.68.25 1.05zm1.47-3.27a.94.94 0 0 1-1.29.3c-3.26-2-8.23-2.58-12.09-1.41a.94.94 0 1 1-.54-1.8c4.4-1.33 9.88-.68 13.61 1.61.44.27.58.85.31 1.3zm.13-3.4C15.2 8.3 8.75 8.08 5.02 9.21a1.13 1.13 0 1 1-.65-2.16c4.28-1.3 11.4-1.05 15.9 1.62a1.13 1.13 0 0 1-1.16 1.95z"/></svg>
-                <input id="f-spotify" type="url" inputmode="url" placeholder="https://open.spotify.com/playlist/…" autocomplete="off">
-              </div>
-              <small class="hint" id="spotHint">{{ t.spot_hint }}</small>
-              <div class="spot-embed" id="spotEmbed"></div>
-            </div>
-            <div class="field full"><label for="f-note">{{ t.f_note }}</label><textarea id="f-note" name="entry.959149459" placeholder="{{ t.f_note_ph }}"></textarea></div>
+            <div class="stap-knoppen"><button class="btn btn-volt" type="button" data-volgende>{{ t.volgende }} <svg><use href="#i-arrow"/></svg></button><button class="stap-terug" type="button" data-vorige>{{ t.terug }}</button></div>
           </fieldset>
 
-          <div class="form-foot">
-            <p>{{ t.privacy }}</p>
-            <button class="btn btn-volt" type="submit" id="submitBtn">{{ t.verstuur }} <svg><use href="#i-arrow"/></svg></button>
-          </div>
+          <fieldset class="stap">
+            <legend>{{ t.s4 }}</legend>
+            <div class="field"><label for="f-fn">{{ t.f_fn }} <i>*</i></label><input id="f-fn" name="entry.1829174241" required autocomplete="given-name"></div>
+            <div class="field"><label for="f-ln">{{ t.f_ln }} <i>*</i></label><input id="f-ln" name="entry.1183264836" required autocomplete="family-name"></div>
+            <div class="field"><label for="f-mail">{{ t.f_mail }} <i>*</i></label><input id="f-mail" type="email" name="entry.1710891049" required autocomplete="email"></div>
+            <div class="field"><label for="f-tel">{{ t.f_tel }} <i>*</i></label><input id="f-tel" type="tel" name="entry.1713797247" required autocomplete="tel"></div>
+            <details class="meer full" id="meer">
+              <summary>{{ t.meer }}</summary>
+              <div class="meer-velden">
+                <div class="field">
+                  <label for="f-spotify">{{ t.f_spotify }}</label>
+                  <div class="spot-input">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.5 17.3a.75.75 0 0 1-1 .25c-2.85-1.74-6.43-2.13-10.66-1.17a.75.75 0 1 1-.33-1.46c4.62-1.06 8.6-.6 11.74 1.33.36.21.47.68.25 1.05zm1.47-3.27a.94.94 0 0 1-1.29.3c-3.26-2-8.23-2.58-12.09-1.41a.94.94 0 1 1-.54-1.8c4.4-1.33 9.88-.68 13.61 1.61.44.27.58.85.31 1.3zm.13-3.4C15.2 8.3 8.75 8.08 5.02 9.21a1.13 1.13 0 1 1-.65-2.16c4.28-1.3 11.4-1.05 15.9 1.62a1.13 1.13 0 0 1-1.16 1.95z"/></svg>
+                    <input id="f-spotify" type="url" inputmode="url" placeholder="https://open.spotify.com/playlist/…" autocomplete="off">
+                  </div>
+                  <small class="hint" id="spotHint">{{ t.spot_hint }}</small>
+                  <div class="spot-embed" id="spotEmbed"></div>
+                </div>
+                <div class="field"><label for="f-note">{{ t.f_note }}</label><textarea id="f-note" name="entry.959149459" placeholder="{{ t.f_note_ph }}"></textarea></div>
+                <div class="field"><label for="f-org">{{ t.f_org }}</label><input id="f-org" name="entry.177049678" autocomplete="organization" placeholder="{{ t.optioneel }}"></div>
+              </div>
+            </details>
+            <div class="stap-knoppen"><button class="btn btn-volt" type="submit" id="submitBtn">{{ t.verstuur }} <svg><use href="#i-arrow"/></svg></button><button class="stap-terug" type="button" data-vorige>{{ t.terug }}</button></div>
+            <p class="privacy full">{{ t.privacy }}</p>
+          </fieldset>
           <p class="err" id="err" role="alert"></p>
         </div>
         <div class="done" id="done" role="status">
@@ -845,11 +887,12 @@ $$(".opts").forEach(box => {
 const typeOther = $("#f-type-other");
 $$('input[name="entry.967309014"]').forEach(r => r.addEventListener("change", () => {
   const isOther = r.value === "__other_option__" && r.checked;
-  typeOther.classList.toggle("show", isOther);
+  $("#typeOtherBox").classList.toggle("show", isOther);
+  $("#s1Knop").hidden = !isOther;
   if (isOther) typeOther.focus();
 }));
 $$('input[name="entry.2040819063"]').forEach(r => r.addEventListener("change", () => {
-  $("#gearField").style.display = r.value === "Ja" ? "" : "none";
+  $("#gearField").hidden = r.value !== "Ja";
 }));
 
 // Times: a select in 15-minute steps. <input type="time"> in a 12-hour browser stays
@@ -862,10 +905,11 @@ $$("select.time").forEach(sel => {
   }
 });
 
-// "Vraag een custom mix aan" pre-fills the remarks
+// "Vraag een custom mix aan" pre-fills the remarks (folded away in the last step, so open it)
 $$("[data-prefill]").forEach(a => a.addEventListener("click", () => {
   const t = $("#f-note");
   if (!t.value) t.value = T.prefill;
+  $("#meer").open = true;
 }));
 
 // Optional Spotify playlist: validated, previewed, and sent along inside "Opmerkingen"
@@ -898,32 +942,79 @@ function checkSpotify() {
 spotIn.addEventListener("input", checkSpotify);
 
 const form = $("#bookForm"), err = $("#err"), btn = $("#submitBtn");
+
+// What is still missing in one step (or the whole form): empty or invalid fields,
+// unanswered choice questions, the "Andere" text, a broken Spotify link.
+function missingIn(scope) {
+  const missing = [];
+  $$("input[required]:not([type=radio]), select[required], textarea[required]", scope).forEach(i => {
+    if (!i.value.trim() || !i.checkValidity()) missing.push(i);
+  });
+  $$(".opts", scope).forEach(box => { if (!$("input:checked", box)) missing.push($("input", box)); });
+  const otherSel = $('input[value="__other_option__"]:checked', scope);
+  if (otherSel && !typeOther.value.trim()) missing.push(typeOther);
+  if (scope.contains(spotIn) && !missing.length && checkSpotify().bad) { $("#meer").open = true; missing.push(spotIn); }
+  return missing;
+}
+function showMissing(el) {
+  // name the field, so it's clear what's wrong
+  const box = el.closest(".field, .other");
+  const lbl = box && ($(`label[for="${el.id}"]`, box) || $(".q", box));
+  const name = lbl ? lbl.textContent.replace("*", "").trim() : "";
+  err.textContent = el === spotIn ? T.err_spot
+    : (el.type !== "radio" && el.value.trim() ? T.err_fout : T.err_leeg) + name;
+  err.classList.add("show");
+  el.focus({ preventScroll: true });
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+// Four short steps with a progress bar. The bar moves most after the first step (one tap),
+// so the rest feels like finishing something already started (same as thoraxstudio.be).
+const steps = $$(".stap", form), bar = $("#voortgang"), PCT = [12, 40, 64, 86];
+let step = 1;
+function showStep(n, focus) {
+  step = Math.min(Math.max(n, 1), steps.length);
+  steps.forEach((el, i) => el.classList.toggle("actief", i === step - 1));
+  bar.firstElementChild.style.width = PCT[step - 1] + "%";
+  bar.setAttribute("aria-valuenow", PCT[step - 1]);
+  $("#stapNu").textContent = `${T.stap} ${step} / ${steps.length}`;
+  err.classList.remove("show");
+  if (form.getBoundingClientRect().top < 0) form.scrollIntoView({ behavior: "instant", block: "start" });
+  if (!focus) return;
+  const first = $(step === 1 ? "input:checked" : "input:not([type=radio]), select", steps[step - 1]) || $("input", steps[step - 1]);
+  first?.focus({ preventScroll: true });
+}
+function next() {
+  const missing = missingIn(steps[step - 1]);
+  if (missing.length) { showMissing(missing[0]); return; }
+  showStep(step + 1, true);
+}
+form.addEventListener("click", e => {
+  if (e.target.closest("[data-volgende]")) next();
+  else if (e.target.closest("[data-vorige]")) showStep(step - 1, true);
+  // step 1: a tap on a kind of party goes straight on ("Andere" first asks which).
+  // With the keyboard you pick first, then press Enter.
+  else if (step === 1 && e.target.tagName !== "INPUT") {
+    const l = e.target.closest(".opts.groot label");
+    if (l && $("input", l).value !== "__other_option__") setTimeout(next, 180);
+  }
+});
+
 form.addEventListener("submit", async e => {
   e.preventDefault();
   err.classList.remove("show");
+  if (step < steps.length) { next(); return; }   // Enter in an earlier step
 
-  // validation
-  const missing = [];
-  $$("input[required]:not([type=radio]), select[required], textarea[required]", form).forEach(i => {
-    if (!i.value.trim() || !i.checkValidity()) missing.push(i);
-  });
-  $$(".opts", form).forEach(box => { if (!$("input:checked", box)) missing.push($("input", box)); });
-  const otherSel = $('input[value="__other_option__"]:checked');
-  if (otherSel && !typeOther.value.trim()) missing.push(typeOther);
-  const spot = checkSpotify();
-  if (!missing.length && spot.bad) missing.push(spotIn);
+  // validation (the whole form, in case something was skipped)
+  const missing = missingIn(form);
   if (missing.length) {
-    // name the field, so it's clear what's wrong
-    const el = missing[0], box = el.closest(".field");
-    const lbl = box && ($(`label[for="${el.id}"]`, box) || $(".q", box));
-    const name = lbl ? lbl.textContent.replace("*", "").trim() : "";
-    err.textContent = el === spotIn ? T.err_spot
-      : (el.type !== "radio" && el.value.trim() ? T.err_fout : T.err_leeg) + name;
-    err.classList.add("show");
-    missing[0].focus();
-    missing[0].scrollIntoView({ behavior: "smooth", block: "center" });
+    const at = steps.findIndex(el => el.contains(missing[0])) + 1;
+    if (at && at !== step) showStep(at);
+    showMissing(missing[0]);
     return;
   }
+  const otherSel = $('input[value="__other_option__"]:checked');
+  const spot = checkSpotify();
 
   const fd = new FormData(form);
   const [y, m, d] = $("#f-date").value.split("-");
@@ -933,6 +1024,9 @@ form.addEventListener("submit", async e => {
   const [eh, em] = $("#f-end").value.split(":");
   fd.append("entry.859167969_hour", eh); fd.append("entry.859167969_minute", em);
   if (otherSel) fd.append("entry.967309014.other_option_response", typeOther.value.trim());
+  // The Google Form requires an event name; on the site it is optional, so fall back to the kind of party
+  const kind = otherSel ? typeOther.value.trim() : $('input[name="entry.967309014"]:checked').value;
+  fd.set("entry.912097730", $("#f-ev").value.trim() || kind);
   // extra lines in "Opmerkingen": the language (so the reply is in English) and the
   // Spotify link last (Bevestiging.gs reads both)
   const extra = [T.taal_regel, spot.url && "Spotify-playlist: " + spot.url].filter(Boolean);
